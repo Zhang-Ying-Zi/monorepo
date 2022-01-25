@@ -1,0 +1,22 @@
+{
+  "name": "monorepo",
+  "version": "1.0.0",
+  "description": "",
+  "workspaces": [
+    "packages/@mern-client",
+    "packages/@mern-server",
+    "packages/@babel-sample",
+    "packages/@ts-sample",
+    "packages/@eslint-sample",
+    "packages/@scripty-sample"
+  ],
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zhang.Yingzi",
+  "license": "ISC",
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}

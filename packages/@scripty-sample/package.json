@@ -1,0 +1,17 @@
+{
+  "name": "scripty-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sample:hello": "scripty"
+  },
+  "scripty": {
+    "path": "../../scripts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "scripty": "^2.0.0"
+  }
+}
