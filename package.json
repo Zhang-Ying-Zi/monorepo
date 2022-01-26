@@ -6,11 +6,25 @@
     "packages/**"
   ],
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "prettier": "prettier --config .prettierrc --write {.,components,lib,pages}/*.{js,css,json,md}",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prepublish": "verdaccio"
+  },
   "husky": {
     "hooks": {
+      "pre-commit": "lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint"
+    ],
+    "*.{js,css,json,md}": [
+      "npm run prettier"
+    ]
   },
   "author": "Zhang.Yingzi",
   "license": "ISC",
