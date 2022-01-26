@@ -123,3 +123,12 @@ Lerna 为我们提供了 lerna import 命令，用来将我们已有的包导入
 
 1. 创建一个包含所有需要导入 repo 地址的文本文件；
 2. 执行 shell 命令：cat repos.txt | ./tomono.sh
+
+### pm2
+
+```bash
+pm2 --name verdaccio start npm -- verdaccio
+pm2 ps
+pm2 delete 0
+pm2 logs
+```
