@@ -11,7 +11,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "verdaccio": "verdaccio",
-    "prepublish": "pm2 --name verdaccio start npm -- verdaccio",
+    "prepublish": "pm2 --name verdaccio restart npm -- verdaccio",
     "lerna:bootstrap": "lerna bootstrap",
     "lerna:publish": "lerna publish"
   },
