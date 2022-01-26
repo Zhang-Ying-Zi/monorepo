@@ -13,5 +13,6 @@
     "@babel/preset-env": "^7.4.4",
     "gulp": "^4.0.1",
     "gulp-babel": "^8.0.0"
-  }
+  },
+  "gitHead": "289dbc5e9b4e7a91bbc7969ca31bee3a046332fb"
 }

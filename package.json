@@ -10,7 +10,10 @@
     "prettier": "prettier --config .prettierrc --write {.,components,lib,pages}/*.{js,css,json,md}",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "prepublish": "verdaccio"
+    "verdaccio": "verdaccio",
+    "prepublish": "pm2 --name verdaccio start npm -- verdaccio",
+    "lerna:bootstrap": "lerna bootstrap",
+    "lerna:publish": "lerna publish"
   },
   "husky": {
     "hooks": {
@@ -38,6 +41,7 @@
     "husky": "^7.0.4",
     "lerna": "^4.0.0",
     "lerna-changelog": "^2.2.0",
+    "pm2": "^5.1.2",
     "prettier": "^2.5.1"
   }
 }
