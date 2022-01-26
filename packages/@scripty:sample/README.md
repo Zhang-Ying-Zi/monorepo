@@ -9,7 +9,7 @@ package.json
 $ chmod -R u+x scripts
 
 
-// 替换方案: /monorepo/node_modules/scripty/scripts 制作link软链接放到根目录
+// 替换方案: /monorepo/node_modules/scripty/scripts 制作link软链接
 ```
 
 运行示例
