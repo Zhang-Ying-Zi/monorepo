@@ -2,8 +2,8 @@
   "name": "rxjs-store",
   "version": "1.0.6",
   "description": "State management store writen on top of RxJs",
-  "main": "./lib/RxJsStore.js",
-  "types": "./lib/RxJsStore.d.ts",
+  "main": "./lib/src/RxJsStore.js",
+  "types": "./lib/src/RxJsStore.d.ts",
   "repository": {
     "type": "git",
     "url": ""
@@ -42,5 +42,5 @@
     "ts-node": "^10.2.1",
     "typescript": "^4.4.3"
   },
-  "gitHead": "2ba0742afa7b497c1d07725e2e4d69a1e91cda14"
+  "gitHead": "69959a5cda3ce5ed7595f30454f53ed0fed7981b"
 }
