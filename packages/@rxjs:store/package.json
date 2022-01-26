@@ -1,0 +1,45 @@
+{
+  "name": "rxjs-store",
+  "version": "1.0.0",
+  "description": "State management store writen on top of RxJs",
+  "main": "./lib/RxJsStore.js",
+  "types": "./lib/RxJsStore.d.ts",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "prepare": "tsc",
+    "del-lib": "rimraf lib",
+    "test": "mocha --require ts-node/register src/**/*.test.ts",
+    "build": "npm run test && npm run del-lib && tsc",
+    "publish": "npm run del-lib && tsc && np"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [
+    "javascript",
+    "state management",
+    "store",
+    "reactive"
+  ],
+  "dependencies": {
+    "rxjs": "^7.3.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.22",
+    "@types/mocha": "^9.0.0",
+    "chai": "^4.3.4",
+    "mocha": "^9.1.2",
+    "np": "^7.5.0",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
+  }
+}
