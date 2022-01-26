@@ -15,6 +15,7 @@
     "access": "public"
   },
   "scripts": {
+    "prepare": "tsc",
     "del-lib": "rimraf lib",
     "test": "mocha --require ts-node/register src/**/*.test.ts",
     "build": "npm run test && npm run del-lib && tsc",
@@ -41,5 +42,5 @@
     "ts-node": "^10.2.1",
     "typescript": "^4.4.3"
   },
-  "gitHead": "fb3150c0f6ef8938ac44004c5657c818c026a5b4"
+  "gitHead": "2ba0742afa7b497c1d07725e2e4d69a1e91cda14"
 }
