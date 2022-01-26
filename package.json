@@ -11,12 +11,21 @@
     "packages/@scripty-sample"
   ],
   "private": true,
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "scripts": {},
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   },
   "author": "Zhang.Yingzi",
   "license": "ISC",
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "@commitlint/cli": "^16.1.0",
+    "@commitlint/config-conventional": "^16.0.0",
+    "@commitlint/config-lerna-scopes": "^16.0.0",
+    "commitlint": "^16.1.0",
+    "husky": "^7.0.4",
+    "lerna": "^4.0.0",
+    "lerna-changelog": "^2.2.0"
   }
 }

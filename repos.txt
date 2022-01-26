@@ -1,0 +1,4 @@
+// 1. Git仓库地址  2. 子项目名称  3. 迁移后的路径
+// git@github.com/backend.git @mono/backend packages/backend
+// git@github.com/frontend.git @mono/frontend packages/frontend
+// git@github.com/mobile.git @mono/mobile packages/mobile
