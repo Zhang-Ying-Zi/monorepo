@@ -13,5 +13,6 @@
   "license": "ISC",
   "devDependencies": {
     "scripty": "^2.0.0"
-  }
+  },
+  "gitHead": "f4d5249fd293d39e5ae0cb1070b5ebc323445e39"
 }
