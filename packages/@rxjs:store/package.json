@@ -19,7 +19,7 @@
     "del-lib": "rimraf lib",
     "test": "mocha --require ts-node/register src/**/*.test.ts",
     "build": "npm run test && npm run del-lib && tsc",
-    "publish": "npm run del-lib && tsc && np"
+    "publish": "npm run del-lib && tsc"
   },
   "author": "",
   "license": "ISC",
@@ -37,10 +37,9 @@
     "@types/mocha": "^9.0.0",
     "chai": "^4.3.4",
     "mocha": "^9.1.2",
-    "np": "^7.5.0",
     "rimraf": "^3.0.2",
     "ts-node": "^10.2.1",
     "typescript": "^4.4.3"
   },
-  "gitHead": "69959a5cda3ce5ed7595f30454f53ed0fed7981b"
+  "gitHead": "52776c040d84d57eb5895f220108f874cbf22c20"
 }
