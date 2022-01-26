@@ -127,8 +127,15 @@ Lerna 为我们提供了 lerna import 命令，用来将我们已有的包导入
 ### pm2
 
 ```bash
-pm2 --name verdaccio start npm -- verdaccio
-pm2 ps
-pm2 delete 0
-pm2 logs
+$ npm install pm2@latest -g
+$ pm2 update
+$ pm2 --name verdaccio start npm -- verdaccio
+$ pm2 ps
+$ pm2 delete 0
+$ pm2 logs
+$ pm2 restart app_name
+$ pm2 reload app_name
+$ pm2 stop app_name
+$ pm2 delete app_name
+$ pm2 plus
 ```

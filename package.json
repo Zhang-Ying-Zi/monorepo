@@ -11,7 +11,6 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "verdaccio": "verdaccio",
-    "prepublish": "pm2 --name verdaccio restart npm -- verdaccio",
     "lerna:bootstrap": "lerna bootstrap",
     "lerna:publish": "lerna publish"
   },
@@ -41,7 +40,6 @@
     "husky": "^7.0.4",
     "lerna": "^4.0.0",
     "lerna-changelog": "^2.2.0",
-    "pm2": "^5.1.2",
     "prettier": "^2.5.1"
   }
 }
