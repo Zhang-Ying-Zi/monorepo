@@ -1,6 +1,6 @@
 {
   "name": "rxjs-store",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "State management store writen on top of RxJs",
   "main": "./lib/src/RxJsStore.js",
   "types": "./lib/src/RxJsStore.d.ts",
