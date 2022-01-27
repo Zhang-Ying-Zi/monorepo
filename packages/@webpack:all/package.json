@@ -1,6 +1,6 @@
 {
-  "name": "webpack-base",
-  "version": "1.0.4",
+  "name": "webpack-all",
+  "version": "1.0.12",
   "description": "",
   "main": "src/index.js",
   "author": "",
@@ -64,5 +64,5 @@
     "react-dom": "^17.0.1",
     "vue": "^2.6.12"
   },
-  "gitHead": "a871550dc64e3261f11766c506dbb72620006822"
+  "gitHead": "3ecfbe3445c975137281ee5b4ed2299ea57a239f"
 }

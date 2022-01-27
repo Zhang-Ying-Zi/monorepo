@@ -115,6 +115,8 @@ npm publish --registry http://localhost:4873/
 # 每当执行 lerna publish 时，子项目所构建成的 package 将会发布在本地 npm 仓库中，
 # 每当执行 lerna bootstrap 时，Verdaccio 将会放行，让您成功从远程 npm 仓库中拉取相应的代码。
 
+npm unpublish --force yourPackage
+
 ```
 
 ### commitlint
