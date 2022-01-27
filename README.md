@@ -35,6 +35,34 @@ $ npm install --registry=https://registry.npm.taobao.org --legacy-peer-deps
 $ yarn install
 ```
 
+### npm workspaces
+
+```bash
+# Run "test" script on all packages
+npm run test --workspaces
+
+# Tip - this also works:
+npm run test  -ws
+
+# Runs "test" only on package-a
+npm run test --workspace package-a
+
+# Tip - this also works:
+npm run test -w package-a
+
+# Install `lodash` on `package-a`
+npm install lodash --workspace package-a
+
+# Install `tap` on `package-b` as a dev dependency
+npm install tap --workspace package-b --save-dev
+
+# Install `package-a` on `package-b`
+npm install package-a --workspace package-b
+
+# Install `eslint` in all packages
+npm install eslint --workspaces
+```
+
 ### scripty
 
 ```bash

@@ -8,7 +8,7 @@
   "private": true,
   "scripts": {
     "prettier": "prettier --config .prettierrc --write {.,components,lib,pages}/*.{js,css,json,md}",
-    "lint": "eslint .",
+    "lint": "eslint . --cache",
     "lint:fix": "eslint . --fix",
     "verdaccio": "verdaccio",
     "lerna:bootstrap": "lerna bootstrap",
