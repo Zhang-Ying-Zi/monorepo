@@ -1,7 +1,6 @@
 const fs = require("fs");
 const gulp = require("gulp");
-const gulpLoadPlugins = require("gulp-load-plugins");
-const plugins = gulpLoadPlugins();
+const plugins = require("gulp-load-plugins")();
 
 const pkg = JSON.parse(fs.readFileSync("./package.json", "utf8"));
 
@@ -9,6 +8,7 @@ gulp.task("clean", function () {
   return gulp.src("./dist/*").pipe(plugins.clean());
 });
 
+// 合并 css,js 文件
 gulp.task(
   "usemin",
   gulp.series("clean", function () {
