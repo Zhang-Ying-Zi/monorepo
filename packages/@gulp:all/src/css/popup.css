@@ -1,0 +1,301 @@
+.popup .navbar .title {
+  width: 100%;
+  text-align: left !important;
+  /* position: absolute !important; */
+  font-size: 16px;
+  color: #000000 !important;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.popup .page-content {
+  padding-top: 80px !important;
+}
+.popup .page-content input, .popup .page-content select {
+  font-size: 14px !important;
+}
+.popup .form .div-label {
+  height: 40px !important;
+  line-height: 40px !important;
+}
+/* --- 分区间选择弹出对话框样式 1-10   11-20 ...-------------------------------- */
+.section-select-dialog {
+  z-index: 13499;
+  width: 364px;
+  margin-left: 0 !important;
+  margin-top: 0;
+  -webkit-transform: translate3d(-50%, -50%, 0) scale(1) !important;
+          transform: translate3d(-50%, -50%, 0) scale(1) !important;
+}
+.section-select-dialog .dialog-inner {
+  padding: 0;
+}
+.section-select-dialog .header {
+  height: 44px;
+  line-height: 44px;
+  background-image: -webkit-gradient(linear, right top, left top, from(#5a9ff0), to(#5a82f0));
+  background-image: -webkit-linear-gradient(right, #5a9ff0 0%, #5a82f0 100%);
+  background-image: linear-gradient(270deg, #5a9ff0 0%, #5a82f0 100%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 10px 0 20px;
+}
+.section-select-dialog .header .title {
+  font-size: 14px;
+  color: white;
+}
+.section-select-dialog .header .close {
+  width: 36px;
+  height: 36px;
+  background: url(../img/close.png) no-repeat;
+  background-size: 16px 16px;
+  background-position: center center;
+  cursor: pointer;
+}
+.section-select-dialog .content {
+  overflow: hidden;
+}
+.section-select-dialog .content > div {
+  margin: 20px 30px 10px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #4a4a4a;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.section-select-dialog .downBatch {
+  margin-bottom: 10px;
+}
+.section-select-dialog .downBatch.clicked {
+  color: #999;
+}
+.section-select-dialog .downBatch:not(:first-of-type) {
+  margin-left: 20px;
+}
+
+/** 简单弹出框样式 ----------------------------------------- */
+.simple-form-pop, .edit-form-400 {
+  width: 400px !important;
+  height: 480px !important;
+  left: 50% !important;
+  top: 50% !important;
+  margin-left: -200px !important;
+  margin-top: -240px !important;
+}
+.simple-form-pop .navbar {
+  height: 50px !important;
+  background:#F5F5F5 !important;
+}
+.simple-form-pop .page-content {
+  padding-top: 50px !important;
+}
+.simple-form-pop .page-content form {
+  margin-bottom: 53px !important;
+}
+.simple-form-pop .page-content input, .simple-form-pop .page-content select, .simple-form-pop .page-content textarea{
+  font-size: 14px;
+}
+.simple-form-pop .btn-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: inline-block;
+  width: 100%;
+  background: #F5F5F5;
+  z-index: 9999;
+}
+.simple-form-pop .btn-footer > div {
+  display: inline-block;
+  padding: 8px 0 3px;
+  width: 100%;
+}
+.fq-coupon {
+  width: 600px !important;
+  margin-left: -300px !important;
+}
+
+/** 较宽的表单编辑弹出框 -------------------------------*/
+.edit-form-pop {
+  width: 900px !important;
+  height: 480px !important;
+  left: 50% !important;
+  top: 50% !important;
+  margin-left: -450px !important;
+  margin-top: -240px !important;
+}
+.edit-form-pop .popup-close img, .edit-form-400 .popup-close img {
+  width: 14px;
+  height: 14px;
+}
+/* 底部按钮样式 */
+.edit-form-pop .btn-navbar, .edit-form-400 .btn-navbar {
+  position: absolute;
+  bottom: 0;
+  background: #f5f5f5;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* 模板中定义的编辑弹出框表单样式 */
+/* helper: {{editform ...}} 表单编辑或新增弹出框样式 -----------------------------*/
+.temp-edit-form {
+  padding: 0 10px;
+}
+.temp-edit-form > .row {
+  overflow: hidden;
+  margin-top: 10px;
+  min-height: 37px;
+}
+.temp-edit-form .col-label {
+  line-height: 35px;
+  white-space: nowrap;
+  text-align: right;
+  /* padding-right: 15px; */
+}
+.temp-edit-form .col-content {
+  display: inline-flex;
+  padding-right: 15px;
+}
+.temp-edit-form .col-content input:not([type="radio"]), 
+.temp-edit-form .col-content select, 
+.temp-edit-form .col-content textarea {
+  width: 100%;
+  color: #212121;
+  font-size: 14px;
+  border: 1px solid #cccccc;
+  padding-left: 10px !important;
+  padding-right: 30px !important;
+}
+.temp-edit-form .col-content input:not([type="radio"]), 
+.temp-edit-form .col-content select {
+  height: 36px;
+}
+
+
+/* 车牌搜索弹出框样式 */
+.nocar-info {
+  width: 100%;
+  color: #fa503c;
+  background: #feedeb; 
+  border: 1px solid #fedcd8;
+  padding-left: 10px;
+  line-height: 35px;
+  margin: 10px 10px 15px;
+  white-space: nowrap;
+}
+.car-search-pop {
+  margin-top: -120px !important;
+  background: none;
+  /* 车牌搜索去掉原始阴影 */
+  box-shadow: none !important; 
+}
+.car-search-pop .my-content {
+  height: 280px;
+  box-shadow: 0px 20px 44px rgba(0, 0, 0, 0.5);
+}
+.car-search-pop .form-container .form-item .div-label:first-of-type {
+  width: 60px;
+  white-space: nowrap;
+  text-align: right;
+}
+.car-search-pop #mydropdown {
+  max-height: 280px !important;
+  /* height: 100%; */
+  position: absolute;
+  top: 140px;
+  left: 86px;
+  z-index: 10000;
+  width: calc(100% - 100px);
+  max-width: 288px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.car-search-pop #mydropdown ul {
+  border: 1px solid #ccc;
+  border-top: none;
+}
+.car-search-pop #mydropdown ul li {
+  display: inline-block;
+  height: 37px;
+  line-height: 35px;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  white-space: nowrap;
+}
+.car-search-pop #mydropdown ul li:last-of-type {
+  border-bottom: none;
+}
+.car-search-pop #mydropdown ul li label span {
+  display: inline-block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+  max-width: 200px;
+  white-space: nowrap;
+}
+.car-search-pop #mydropdown ul li:hover {
+  background: #f5f5f5;
+}
+.car-search-pop .append-text {
+  position: absolute;
+  top: 7px;
+  left: 85px;
+  width: 60%;
+  max-width: 200px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+
+/* 影像弹出框 */
+.live-popup, .img-popup {
+  width: 60% !important;
+  min-width: 400px;
+  max-width: 900px;
+  min-height: 350px;
+  max-height: 90%;
+  margin: auto;
+  position: absolute;
+  left: 0 !important;
+  top: 0 !important;
+  z-index: 999999;
+}
+.detail-popup {
+  width: 500px !important;
+  height: 400px !important;
+  left: 50% !important;
+  top: 50% !important;
+  margin-left: -250px !important;
+  margin-top: -200px !important;
+}
