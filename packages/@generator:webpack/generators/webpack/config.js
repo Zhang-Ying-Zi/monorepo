@@ -124,7 +124,7 @@ module.exports = {
       },
       vue: {
         devDependencies: {
-          "vue-loader": "^15.9.6",
+          "vue-loader": "^15.9.8",
           "vue-template-compiler": "^2.6.12",
         },
         dependencies: {
