@@ -21,8 +21,8 @@ module.exports = {
   filesToCopy: [
     {
       if: "typescript",
-      input: "tsconfig.json",
-      output: "tsconfig.json",
+      input: "packages/@babel:all/tsconfig.json",
+      output: "packages/@babel:all/tsconfig.json",
     },
   ],
   filesToRender: [

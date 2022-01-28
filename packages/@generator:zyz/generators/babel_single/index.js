@@ -1,6 +1,6 @@
 const Generator = require("yeoman-generator");
 const remote = require("yeoman-remote");
-const config = require("../babel/config");
+const config = require("./config");
 const mkdirp = require("mkdirp");
 const path = require("path");
 const _ = require("lodash");
@@ -89,7 +89,7 @@ module.exports = class extends Generator {
 
     // Get Remote Templates
     let done = this.async();
-    remote("Zhang-Ying-Zi", "generator-zyz-babel-source", (err, cachePath) => {
+    remote("Zhang-Ying-Zi", "monorepo", (err, cachePath) => {
       // Copy Files
       config.filesToCopy.forEach((file) => {
         if (!file.if || templateData[file.if]) {
