@@ -7,9 +7,7 @@ module.exports = class extends Generator {
 
   initializing() {
     this.composeWith("zyz:init", {});
-    this.composeWith("zyz:babel_single", {});
     this.composeWith("zyz:eslint_single", {});
-    this.composeWith("zyz:webpack_single", {});
   }
 
   prompting() {}
