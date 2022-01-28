@@ -1,1 +1,0 @@
-### Yeoman Generator for webpack

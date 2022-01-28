@@ -1,11 +1,11 @@
 {
-  "name": "generator-webpack",
+  "name": "generator-zyz",
   "version": "1.0.0",
-  "description": "generator for webpack",
+  "description": "generator for all",
   "main": "generators/app/index.js",
   "scripts": {
     "link": "npm link",
-    "generate": "yo webpack",
+    "generate": "yo zyz:webpack",
     "postpublish": "git push origin master"
   },
   "keywords": [
