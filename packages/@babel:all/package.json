@@ -1,0 +1,24 @@
+{
+  "name": "babel-all",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Zhang.Yingzi",
+  "license": "ISC",
+  "scripts": {
+    "compileJS": "babel src --out-dir dist",
+    "compileTS": "babel src --out-dir dist --extensions '.ts'",
+    "compile": "npm run compileJS && npm run compileTS"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.10",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.13.8",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/preset-typescript": "^7.13.0",
+    "core-js": "^3.10.1",
+    "typescript": "^4.2.4"
+  }
+}
