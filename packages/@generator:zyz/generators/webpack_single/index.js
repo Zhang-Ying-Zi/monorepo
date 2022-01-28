@@ -108,9 +108,9 @@ module.exports = class extends Generator {
     );
   }
 
-  install() {
-    // if (!this.options["skip-install"]) {
-    //   this.npmInstall();
-    // }
-  }
+  // install() {
+  //   if (!this.options["skip-install"]) {
+  //     this.npmInstall();
+  //   }
+  // }
 };
