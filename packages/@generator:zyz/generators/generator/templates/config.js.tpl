@@ -20,7 +20,7 @@ module.exports = {
         {
           name: "value2",
           value: "value2",
-          checked: true,
+          checked: false,
         },
       ],
     },

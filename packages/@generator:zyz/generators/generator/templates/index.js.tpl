@@ -122,7 +122,7 @@ module.exports = class extends Generator {
 
     // Get Remote Templates
     let done = this.async();
-    remote("Zhang-Ying-Zi", "generator-zyz-<%= appname %>-source", (err, cachePath) => {
+    remote("Zhang-Ying-Zi", "monorepo", (err, cachePath) => {
       // Copy Files
       config.filesToCopy.forEach((file) => {
         if (!file.if || templateData[file.if]) {
@@ -134,9 +134,9 @@ module.exports = class extends Generator {
     });
   }
 
-  install() {
-    if (!this.options["skip-install"]) {
-      this.npmInstall();
-    }
-  }
+  // install() {
+  //   if (!this.options["skip-install"]) {
+  //     this.npmInstall();
+  //   }
+  // }
 };

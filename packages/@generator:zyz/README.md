@@ -1,6 +1,7 @@
 ### Yeoman Generator for webpack
 
 ```bash
+yo zyz:generator
 yo zyz:init
 yo zyz:eslint
 yo zyz:babel
