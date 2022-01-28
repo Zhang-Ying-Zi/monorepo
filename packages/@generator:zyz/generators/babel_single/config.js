@@ -22,7 +22,7 @@ module.exports = {
     {
       if: "typescript",
       input: "packages/@babel:all/tsconfig.json",
-      output: "packages/@babel:all/tsconfig.json",
+      output: "tsconfig.json",
     },
   ],
   filesToRender: [
