@@ -6,10 +6,10 @@ module.exports = class extends Generator {
   }
 
   initializing() {
-    this.composeWith("all:init", {});
+    this.composeWith("zyz:init", {});
     this.composeWith("zyz-babel:babel", {});
     this.composeWith("zyz-eslint:eslint", {});
-    this.composeWith("all:webpack", {});
+    this.composeWith("zyz:webpack", {});
   }
 
   prompting() {}

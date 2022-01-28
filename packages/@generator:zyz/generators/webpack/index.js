@@ -20,6 +20,13 @@ module.exports = class extends Generator {
     }
   }
 
+  initializing() {
+    this.composeWith("zyz:init", {});
+    this.composeWith("zyz-babel:babel", {});
+    this.composeWith("zyz-eslint:eslint", {});
+    this.composeWith("zyz:webpack", {});
+  }
+
   prompting() {
     this.prevShareConfig = this.fs.readJSON(".yo-rc.json") || {};
 
