@@ -8,7 +8,7 @@ module.exports = class extends Generator {
   initializing() {
     this.composeWith("zyz:init", {});
     this.composeWith("zyz:babel_single", { react: false, typescript: true });
-    this.composeWith("zyz:eslint_babel", { vue: true });
+    this.composeWith("zyz:eslint_single", { vue: true });
     this.composeWith("zyz:webpack", {});
     this.composeWith("zyz:vue_single", {});
   }
