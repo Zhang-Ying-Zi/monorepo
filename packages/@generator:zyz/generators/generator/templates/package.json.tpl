@@ -16,10 +16,6 @@
     "email": "489573239@qq.com",
     "url": "https://github.com/Zhang-Ying-Zi"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Zhang-Ying-Zi/generator-zyz-<%= appname %>.git"
-  },
   "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.21",
