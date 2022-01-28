@@ -1,7 +1,10 @@
 ### Yeoman Generator for webpack
 
 ```bash
-yo webpack
+yo zyz:init
+yo zyz:eslint
+yo zyz:babel
+yo zyz:webpack
 ```
 
 ### yeoman-remote download path
