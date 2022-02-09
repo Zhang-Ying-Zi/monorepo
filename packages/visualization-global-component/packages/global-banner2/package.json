@@ -1,0 +1,27 @@
+{
+  "name": "global-banner2",
+  "description": "banner组件2",
+  "version": "0.0.1",
+  "snapshot": "https://img.alicdn.com/imgextra/i2/O1CN011OBgOQ1lgQnWNjjtA_!!6000000004848-0-tps-750-291.jpg",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "src": {
+        "title": "图片地址",
+        "type": "string",
+        "format": "image"
+      },
+      "link": {
+        "title": "跳转链接",
+        "type": "string",
+        "format": "url"
+      }
+    },
+    "required": [
+      "src"
+    ]
+  },
+  "data": {
+    "src": "https://img.alicdn.com/imgextra/i2/O1CN011OBgOQ1lgQnWNjjtA_!!6000000004848-0-tps-750-291.jpg"
+  }
+}

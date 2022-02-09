@@ -1,3 +1,14 @@
+### install
+
+```bash
+$ npm install
+$ npm install --legacy-peer-deps
+$ npm install --registry=https://registry.npm.taobao.org
+$ npm install --registry=https://registry.npm.taobao.org --legacy-peer-deps
+# or
+$ yarn install
+```
+
 ### Volta
 
 Volta’s job is to manage your JavaScript command-line tools, such as `node`, `npm`, `yarn`, or executables shipped as part of JavaScript packages.
@@ -22,17 +33,6 @@ volta pin node@12
   "yarn": "1.19.2"
 }
 
-```
-
-### install
-
-```bash
-$ npm install
-$ npm install --legacy-peer-deps
-$ npm install --registry=https://registry.npm.taobao.org
-$ npm install --registry=https://registry.npm.taobao.org --legacy-peer-deps
-# or
-$ yarn install
 ```
 
 ### npm workspaces
