@@ -12,7 +12,8 @@
     "lint:fix": "eslint . --fix",
     "verdaccio": "verdaccio",
     "lerna:bootstrap": "lerna bootstrap",
-    "lerna:publish": "lerna publish"
+    "lerna:publish": "lerna publish",
+    "deploy": "sh deploy.sh"
   },
   "husky": {
     "hooks": {
