@@ -1,5 +1,5 @@
 {
   // 继承
-  "extends": "../.babelrc",
+  "extends": "../../.babelrc",
   "plugins": ["transform-vue-jsx", "@babel/plugin-syntax-dynamic-import"]
 }

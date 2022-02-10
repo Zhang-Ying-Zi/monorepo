@@ -25,34 +25,34 @@ module.exports = {
   ],
   filesToCopy: [
     {
-      input: "packages/@webpack:all/CONSTANT.js",
+      input: "packages/@webpack/all/CONSTANT.js",
       output: "CONSTANT.js",
     },
     {
-      input: "packages/@webpack:all/webpackConfig/webpack-css-config.js",
+      input: "packages/@webpack/all/webpackConfig/webpack-css-config.js",
       output: "webpackConfig/webpack-css-config.js",
     },
     {
-      input: "packages/@webpack:all/webpackConfig/webpack-dev-config.js",
+      input: "packages/@webpack/all/webpackConfig/webpack-dev-config.js",
       output: "webpackConfig/webpack-dev-config.js",
     },
     {
-      input: "packages/@webpack:all/webpackConfig/webpack-js-config.js",
+      input: "packages/@webpack/all/webpackConfig/webpack-js-config.js",
       output: "webpackConfig/webpack-js-config.js",
     },
     {
       if: "react",
-      input: "packages/@webpack:all/webpackConfig/webpack-react-config.js",
+      input: "packages/@webpack/all/webpackConfig/webpack-react-config.js",
       output: "webpackConfig/webpack-react-config.js",
     },
     {
       if: "typescript",
-      input: "packages/@webpack:all/webpackConfig/webpack-ts-config.js",
+      input: "packages/@webpack/all/webpackConfig/webpack-ts-config.js",
       output: "webpackConfig/webpack-ts-config.js",
     },
     {
       if: "vue",
-      input: "packages/@webpack:all/webpackConfig/webpack-vue-config.js",
+      input: "packages/@webpack/all/webpackConfig/webpack-vue-config.js",
       output: "webpackConfig/webpack-vue-config.js",
     },
   ],
