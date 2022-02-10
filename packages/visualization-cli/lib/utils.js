@@ -29,11 +29,7 @@ async function downLoadTemplateDir(repositoryUsername, projectName, sourcePath, 
   await new Promise((resolve, reject) => {
     remote(repositoryUsername, projectName, (err, cachePath) => {
       if (err) return reject(err);
-
-      // Copy Files
-      deleteFolderRecursive(destPath);
       copyFolderRecursive(path.join(cachePath, sourcePath), destPath);
-
       resolve();
     });
   });
@@ -91,9 +87,9 @@ function resolveJson(context, name = "package.json") {
   return {};
 }
 
-function pusBranch() {
+function pushBranch() {
   try {
-    execSync(`git add . && git commit -m 'release project' && git push`);
+    execSync(`git add . && git commit -m 'release project' && git push origin master`);
   } catch (e) {
     console.log(e);
   }
@@ -135,6 +131,6 @@ module.exports = {
   writeFileTree,
   deleteFolderRecursive,
   resolveJson,
-  pusBranch,
+  pushBranch,
   Shell,
 };

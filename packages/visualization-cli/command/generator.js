@@ -96,8 +96,6 @@ async function generate(name) {
         },
       ])
       .then((answers) => {
-        console.log("answers", answers);
-
         // 如果确定覆盖
         if (answers["template-overwrite"]) {
           // 删除文件夹

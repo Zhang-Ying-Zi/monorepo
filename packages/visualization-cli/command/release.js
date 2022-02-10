@@ -4,7 +4,7 @@ const inquirer = require("inquirer");
 const axios = require("axios");
 const chalk = require("chalk");
 const ora = require("ora");
-const { writeFileTree, resolveJson, pusBranch } = require("../lib/utils");
+const { writeFileTree, resolveJson, pushBranch } = require("../lib/utils");
 
 const rootPath = process.cwd();
 
@@ -51,7 +51,7 @@ async function release() {
   // 升级版本
   const spinner = ora("🗃 开始提交模板...").start();
   await upVersion();
-  pusBranch();
+  pushBranch();
   spinner.succeed("🎉 模版提交完成");
   await releaseTemplate({ ...templateConfig, baseApi });
 }

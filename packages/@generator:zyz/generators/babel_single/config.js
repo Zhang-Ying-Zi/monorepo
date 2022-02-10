@@ -21,7 +21,7 @@ module.exports = {
   filesToCopy: [
     {
       if: "typescript",
-      input: "packages/@babel:all/tsconfig.json",
+      input: "packages/@babel/all/tsconfig.json",
       output: "tsconfig.json",
     },
   ],
