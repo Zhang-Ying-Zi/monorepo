@@ -84,6 +84,8 @@ npx lerna publish：发布代码有变动的 package，因此首先您需要在�
 
 npx lerna add：将本地或远程的包作为依赖添加至当前的 monorepo 仓库中，该命令让 Lerna 可以识别并追踪包之间的依赖关系，因此非常重要；
 
+npx lerna clean：删除所有node_modules
+
 # 向 @mono/project2 和 @mono/project3 中添加 @mono/project1
 lerna add @mono/project1 '@mono/project{2,3}'
 
@@ -108,6 +110,8 @@ $ verdaccio
 
 1. Login
 npm adduser --registry http://localhost:4873/
+root
+123456
 2. Publish
 npm publish --registry http://localhost:4873/
 3. Refresh this page
