@@ -1,4 +1,4 @@
-const Controller = require('egg').Controller;
+const Controller = require("egg").Controller;
 /**
  * @Controller Release
  */
@@ -8,19 +8,15 @@ class ReleaseController extends Controller {
    * @Description 查询发布版本信息
    */
   async query() {
-    const {model} = this.ctx;
-    const result = await model.Release.findAll(
-      {
-        order: [
-          ['id', 'DESC']
-        ]
-      }
-    );
+    const { model } = this.ctx;
+    const result = await model.Release.findAll({
+      order: [["id", "DESC"]],
+    });
 
-    return this.ctx.body = {
+    return (this.ctx.body = {
       success: true,
-      result
-    }
+      result,
+    });
   }
 
   /**
@@ -29,18 +25,18 @@ class ReleaseController extends Controller {
    * @Description 添加发布记录
    */
   async create() {
-    const {model, params} = this.ctx;
+    const { model, params } = this.ctx;
 
     const result = await model.Release.create({
       version: params.version,
       downloadUrl: params.downloadUrl,
-      msg: params.msg
+      msg: params.msg,
     });
 
-    return this.ctx.body = {
+    return (this.ctx.body = {
       success: true,
-      result
-    }
+      result,
+    });
   }
 }
 

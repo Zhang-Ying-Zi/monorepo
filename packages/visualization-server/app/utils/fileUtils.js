@@ -1,5 +1,5 @@
-const fs = require('fs')
-const process = require('child_process');
+const fs = require("fs");
+const process = require("child_process");
 
 const utils = {
   existOrNot(path) {
@@ -21,9 +21,9 @@ const utils = {
         } else {
           resolve(true);
         }
-      })
+      });
     });
-  }
-}
+  },
+};
 
 module.exports = utils;

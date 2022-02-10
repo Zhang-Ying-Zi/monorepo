@@ -1,18 +1,10 @@
-const Controller = require('egg').Controller;
-
+const Controller = require("egg").Controller;
 
 class ProjectController extends Controller {
-
   async createProject() {
-    const {params, model, service} = this.ctx;
-    const {pageConfig} = params;
-    const {
-      gitName: name,
-      templateName,
-      templateGit,
-      templateId,
-      version,
-    } = pageConfig.config;
+    const { params, model, service } = this.ctx;
+    const { pageConfig } = params;
+    const { gitName: name, templateName, templateGit, templateId, version } = pageConfig.config;
 
     // todo 重要： 本地环境记得注释回回来！！！
     // 创建项目
@@ -27,7 +19,7 @@ class ProjectController extends Controller {
     //   }
     // });
     // todo 重要：本地环境注释，result为mock结果
-    const result = {}
+    const result = {};
 
     // 数据库存储项目基础信息
     const project = await model.Project.create({
@@ -41,42 +33,38 @@ class ProjectController extends Controller {
     this.ctx.body = {
       success: true,
       result: project,
-    }
+    };
   }
   async query() {
-    const {
-      id,
-    } = this.ctx.params;
+    const { id } = this.ctx.params;
     const where = {};
     if (id) where.id = id;
     const result = await this.ctx.model.Project.findAll({
       where,
       order: [
         // 将转义 title 并针对有效方向列表进行降序排列
-        ['updatedAt', 'DESC'],
-      ]
-    })
-    result.forEach(project => {
-      project.pageConfig = JSON.parse(project.pageConfig)
-      project.gitConfig = JSON.parse(project.gitConfig)
-      project.releaseInfo = JSON.parse(project.releaseInfo)
-    })
+        ["updatedAt", "DESC"],
+      ],
+    });
+    result.forEach((project) => {
+      project.pageConfig = JSON.parse(project.pageConfig);
+      project.gitConfig = JSON.parse(project.gitConfig);
+      project.releaseInfo = JSON.parse(project.releaseInfo);
+    });
     this.ctx.body = {
       success: true,
-      result
-    }
+      result,
+    };
   }
   async preview() {
-    const {
-      id,
-    } = this.ctx.params;
+    const { id } = this.ctx.params;
     const where = {
       id,
     };
-    const {dataValues: project} = await this.ctx.model.Project.findOne({
+    const { dataValues: project } = await this.ctx.model.Project.findOne({
       where,
     });
-    const page = JSON.parse(project.pageConfig)
+    const page = JSON.parse(project.pageConfig);
     this.ctx.body = {
       success: true,
       result: {
@@ -84,9 +72,8 @@ class ProjectController extends Controller {
         components: page.userSelectComponents,
         pageData: page.config,
       },
-    }
+    };
   }
-
 }
 
 module.exports = ProjectController;

@@ -1,21 +1,18 @@
-const Controller = require('egg').Controller;
+const Controller = require("egg").Controller;
 
 class TemplateController extends Controller {
   async query() {
-    const {
-      id,
-      gitUrl,
-    } = this.ctx.params;
+    const { id, gitUrl } = this.ctx.params;
     const where = {};
     if (id) where.id = id;
     if (gitUrl) where.gitUrl = gitUrl;
     const result = await this.ctx.model.Template.findAll({
-      where
+      where,
     });
     this.ctx.body = {
       success: true,
-      result
-    }
+      result,
+    };
   }
 
   async updateTemplate() {
@@ -26,23 +23,23 @@ class TemplateController extends Controller {
       try {
         const result = await model.Template.findOne({
           where: {
-            gitUrl
-          }
-        })
+            gitUrl,
+          },
+        });
         if (result) {
           await model.Template.update(params, {
             where: {
-              gitUrl
-            }
-          })
+              gitUrl,
+            },
+          });
           const result = await model.Template.findOne({
             where: {
-              gitUrl
-            }
-          })
+              gitUrl,
+            },
+          });
           this.ctx.body = {
             success: true,
-            result
+            result,
           };
         } else {
           const result = await model.Template.create({
@@ -51,20 +48,20 @@ class TemplateController extends Controller {
           });
           this.ctx.body = {
             success: true,
-            result
+            result,
           };
         }
       } catch (e) {
         this.ctx.body = {
           showType: 0,
-          result: e
+          result: e,
         };
       }
     } else {
       this.ctx.body = 500;
       this.ctx.body = {
         showType: 0,
-        result: 'gitUrl || name 必填'
+        result: "gitUrl || name 必填",
       };
     }
   }

@@ -1,5 +1,5 @@
-module.exports = app => {
-  const {router, controller} = app;
+module.exports = (app) => {
+  const { router, controller } = app;
 
-  router.get('/plugin/query', controller.plugin.index.query);
-}
+  router.get("/plugin/query", controller.plugin.index.query);
+};

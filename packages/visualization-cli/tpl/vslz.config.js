@@ -1,8 +1,8 @@
 module.exports = {
   name: "vslz-template",
-  templateName: "营销活动",
-  author: "test",
-  snapshot: "https://cdn.img.snapshot.png",
-  gitUrl: "git@gitlab.yourgitlab.com:coco/coco-template.git",
+  templateName: "模板名称",
+  author: "模板创作者",
+  snapshot: "https://s4.ax1x.com/2022/02/10/HYXQkn.jpg",
+  gitUrl: "git@github.com:user/repo.git", // https://github.com/user/repo.git
   projectType: "0",
 };

@@ -1,10 +1,10 @@
-'use strict';
+"use strict";
 
 module.exports = (app) => {
   const { STRING, INTEGER, TEXT } = app.Sequelize;
 
   const Release = app.model.define(
-    'release',
+    "release",
     {
       id: { type: INTEGER, primaryKey: true, autoIncrement: true },
       version: STRING(1000),
@@ -12,7 +12,7 @@ module.exports = (app) => {
       msg: TEXT,
     },
     {
-      paranoid: true
+      paranoid: true,
     }
   );
 

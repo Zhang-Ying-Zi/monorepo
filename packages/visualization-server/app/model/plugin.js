@@ -1,10 +1,10 @@
-'use strict';
+"use strict";
 
 module.exports = (app) => {
   const { STRING, INTEGER, TEXT } = app.Sequelize;
 
   const Plugin = app.model.define(
-    'plugin',
+    "plugin",
     {
       id: { type: INTEGER, primaryKey: true, autoIncrement: true },
       pluginName: STRING(100),
@@ -20,7 +20,7 @@ module.exports = (app) => {
       detail: TEXT,
     },
     {
-      paranoid: true
+      paranoid: true,
     }
   );
 

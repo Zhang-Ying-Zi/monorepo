@@ -1,4 +1,4 @@
-const Controller = require('egg').Controller;
+const Controller = require("egg").Controller;
 /**
  * @Controller Banner
  */
@@ -8,13 +8,13 @@ class BannerController extends Controller {
    * @Description 查询banner信息
    */
   async query() {
-    const {model} = this.ctx;
+    const { model } = this.ctx;
     const result = await model.Banner.findAll();
 
-    return this.ctx.body = {
+    return (this.ctx.body = {
       success: true,
-      result
-    }
+      result,
+    });
   }
 
   /**
@@ -23,17 +23,17 @@ class BannerController extends Controller {
    * @Description 添加banner
    */
   async create() {
-    const {model, params} = this.ctx;
+    const { model, params } = this.ctx;
 
     const result = await model.Banner.create({
       src: params.src,
-      link: params.link
+      link: params.link,
     });
 
-    return this.ctx.body = {
+    return (this.ctx.body = {
       success: true,
-      result
-    }
+      result,
+    });
   }
 }
 

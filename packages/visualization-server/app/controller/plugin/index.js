@@ -1,4 +1,4 @@
-const Controller = require('egg').Controller;
+const Controller = require("egg").Controller;
 /**
  * @Controller Plugin
  */
@@ -8,26 +8,24 @@ class PluginController extends Controller {
    * @Description 查询插件信息
    */
   async query() {
-    const {model, params} = this.ctx;
+    const { model, params } = this.ctx;
     let where = {};
-    const {searchText} = params;
+    const { searchText } = params;
     if (searchText) {
       where = {
-        title: searchText
-      }
+        title: searchText,
+      };
     }
 
     const result = await model.Plugin.findAll({
       where,
-      order: [
-        ['id', 'DESC']
-      ]
+      order: [["id", "DESC"]],
     });
 
-    return this.ctx.body = {
+    return (this.ctx.body = {
       success: true,
-      result
-    }
+      result,
+    });
   }
 
   /**
@@ -37,24 +35,24 @@ class PluginController extends Controller {
    * @Description 创建插件
    */
   async create() {
-    const {model, params} = this.ctx;
+    const { model, params } = this.ctx;
     const targetGit = params.gitUrl ? params.gitUrl : `github:clouDr-f2e/${params.name}`;
     const has = await model.Plugin.findOne({
       where: {
         gitUrl: targetGit,
-      }
+      },
     });
 
     if (has) {
       await model.Plugin.update(params, {
         where: {
-          name: params.name
-        }
+          name: params.name,
+        },
       });
-      return this.ctx.body = {
+      return (this.ctx.body = {
         success: true,
-        result: {}
-      }
+        result: {},
+      });
     }
 
     const result = await model.Plugin.create({
@@ -68,10 +66,10 @@ class PluginController extends Controller {
       name: params.name,
     });
 
-    return this.ctx.body = {
+    return (this.ctx.body = {
       success: true,
-      result
-    }
+      result,
+    });
   }
 
   /**
@@ -80,17 +78,17 @@ class PluginController extends Controller {
    * @Description 更新项目
    */
   async update() {
-    const {model, params} = this.ctx;
+    const { model, params } = this.ctx;
     await model.Plugin.update(params, {
       where: {
-        name: params.name
-      }
+        name: params.name,
+      },
     });
 
-    return this.ctx.body = {
+    return (this.ctx.body = {
       success: true,
-      result: {}
-    }
+      result: {},
+    });
   }
 }
 
