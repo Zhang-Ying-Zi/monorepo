@@ -72,13 +72,13 @@ async function getTemplateName() {
     {
       name: "author",
       type: "input",
-      message: "作者",
+      message: "模版作者",
       default: "",
     },
     {
       name: "templateName",
       type: "input",
-      message: "你还需要给你的模版起个中文名",
+      message: "模版中文名",
       default: "",
     },
   ]);
