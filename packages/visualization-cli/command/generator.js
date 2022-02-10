@@ -2,33 +2,17 @@ const path = require("path");
 const fs = require("fs");
 const chalk = require("chalk");
 const inquirer = require("inquirer");
-const download = require("download-git-repo");
 const ora = require("ora");
 const genConfig = require("../tpl/getConfig");
-const { writeFileTree, resolveJson, deleteFolderRecursive } = require("../lib/utils");
+const { downLoadTemplate, writeFileTree, resolveJson, deleteFolderRecursive } = require("../lib/utils");
+
 // 目标文件夹根路径
 let targetRootPath = process.cwd();
-
-async function downLoadTemplate(repository, projectName, clone) {
-  await new Promise((resolve, reject) => {
-    download(
-      repository,
-      projectName,
-      {
-        clone,
-      },
-      (err) => {
-        if (err) return reject(err);
-        resolve();
-      }
-    );
-  });
-}
 
 function copyTemplates(name, config) {
   async function readAndCopyFile(parentPath, tempPath) {
     const spinner = ora("🗃 开始下载模版...").start();
-    await downLoadTemplate(`direct:git@github.com:coco-h5/coco-template.git`, name, true);
+    await downLoadTemplate(`direct:git@github.com:Zhang-Ying-Zi/monorepo.git`, name, true);
     spinner.succeed("🎉 模版下载完成");
     console.log();
     console.info("🚀 初始化文件配置信息...");
@@ -86,7 +70,7 @@ async function getTemplateName() {
 
 async function generate(name) {
   const config = await getTemplateName();
-  const targetDir = path.join(targetRootPath, name);
+  const targetDir = path.join(targetRootPath, name, "/packages/visualiztion-template");
 
   if (fs.existsSync(targetDir)) {
     // 如果已存在改模块，提问开发者是否覆盖该模块

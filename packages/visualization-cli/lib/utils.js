@@ -4,6 +4,23 @@ const fsExtra = require("fs-extra");
 const readPkg = require("read-pkg");
 const { execSync } = require("child_process");
 const sh = require("shelljs");
+const download = require("download-git-repo");
+
+async function downLoadTemplate(repository, projectName, clone) {
+  await new Promise((resolve, reject) => {
+    download(
+      repository,
+      projectName,
+      {
+        clone,
+      },
+      (err) => {
+        if (err) return reject(err);
+        resolve();
+      }
+    );
+  });
+}
 
 function writeFileTree(dir, files) {
   Object.keys(files).forEach((name) => {
@@ -77,6 +94,7 @@ class Shell {
 }
 
 module.exports = {
+  downLoadTemplate,
   writeFileTree,
   deleteFolderRecursive,
   resolveJson,
