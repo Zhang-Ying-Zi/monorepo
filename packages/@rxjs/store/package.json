@@ -1,5 +1,5 @@
 {
-  "name": "rxjs-store",
+  "name": "@rxjs/store",
   "version": "1.0.10",
   "description": "State management store writen on top of RxJs",
   "main": "./lib/src/RxJsStore.js",

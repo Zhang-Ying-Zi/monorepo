@@ -1,5 +1,5 @@
 {
-  "name": "gulp-all",
+  "name": "@gulp/all",
   "version": "1.0.8",
   "description": "",
   "main": "gulpfile.js",

@@ -1,5 +1,5 @@
 {
-  "name": "generator-zyz",
+  "name": "@generator/zyz",
   "version": "1.0.1",
   "description": "generator for all",
   "main": "generators/app/index.js",

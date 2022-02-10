@@ -1,5 +1,5 @@
 {
-  "name": "coco-global-banner",
+  "name": "@vslz/global-banner",
   "version": "0.2.0",
   "scripts": {
     "serve": "vue-cli-service serve",

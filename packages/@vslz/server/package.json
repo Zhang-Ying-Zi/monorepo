@@ -1,5 +1,5 @@
 {
-  "name": "vslz-server",
+  "name": "@vslz/server",
   "version": "1.0.0",
   "description": "vslz server",
   "main": "index.js",

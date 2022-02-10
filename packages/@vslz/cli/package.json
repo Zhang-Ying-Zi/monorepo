@@ -1,5 +1,5 @@
 {
-  "name": "vslz-cli",
+  "name": "@vslz/cli",
   "version": "1.0.0",
   "description": "vslz cli",
   "private": false,

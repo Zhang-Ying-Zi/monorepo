@@ -1,5 +1,5 @@
 {
-  "name": "scripty-sample",
+  "name": "@scripty/sample",
   "version": "1.0.4",
   "description": "",
   "main": "index.js",

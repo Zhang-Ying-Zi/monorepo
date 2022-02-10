@@ -1,5 +1,5 @@
 {
-  "name": "webpack-all",
+  "name": "@webpack/all",
   "version": "1.0.14",
   "description": "",
   "main": "src/index.js",

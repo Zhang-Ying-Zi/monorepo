@@ -1,5 +1,5 @@
 {
-  "name": "mern-client",
+  "name": "@mern/client",
   "version": "0.1.2",
   "private": true,
   "dependencies": {

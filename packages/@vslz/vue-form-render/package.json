@@ -1,5 +1,5 @@
 {
-  "name": "vue3-form-render",
+  "name": "@vslz/vue3-form-render",
   "version": "1.0.3",
   "scripts": {
     "serve": "vue-cli-service serve",
