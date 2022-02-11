@@ -6,7 +6,7 @@
     "*.less",
     "*.vue"
   ],
-  "private": true,
+  "private": false,
   "description": "",
   "main": "index.js",
   "scripts": {

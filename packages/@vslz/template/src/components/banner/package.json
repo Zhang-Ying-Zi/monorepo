@@ -1,6 +1,7 @@
 {
   "name": "banner",
   "description": "banner 组件",
+  "private": true,
   "snapshot": "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png",
   "schema": {
     "type": "object",

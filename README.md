@@ -69,10 +69,42 @@ npm install eslint --workspaces
 $ chmod -R u+x scripts
 ```
 
+### Verdaccio
+
+default storage path: ~/.local/share/verdaccio
+remove and restart
+
+config file - /Users/zhangyingzi/.config/verdaccio/config.yaml
+
+```bash
+$ npm install --global verdaccio
+
+$ verdaccio
+
+# 本地 npm 仓库
+# http://localhost:4873
+
+1. Login
+npm adduser --registry http://localhost:4873/
+root
+123456
+
+2. Publish
+npm config set max_body_size 100mb --registry http://localhost:4873/
+npm publish --registry http://localhost:4873/
+3. Refresh this page
+
+# 每当执行 lerna publish 时，子项目所构建成的 package 将会发布在本地 npm 仓库中，
+# 每当执行 lerna bootstrap 时，Verdaccio 将会放行，让您成功从远程 npm 仓库中拉取相应的代码。
+
+npm unpublish --registry http://localhost:4873/  --force yourPackage
+
+```
+
 ### lerna
 
 ```bash
-$ npx lerna init
+npx lerna init
 
 npx lerna bootstrap：等同于 lerna link + yarn install，用于创建符合链接并安装依赖包；
 
@@ -95,31 +127,6 @@ lerna add @mono/project1 '@mono/project{2,3}'
 --scope '@mono/{pkg1,pkg2}'：--scope 参数可以指定 Lerna 命令的运行环境，通过使用该参数，Lerna 将不再是一把梭的在所有仓库中执行命令，而是可以精准地在我们所指定的仓库中执行命令，并且还支持示例中的模版语法；
 --stream：该参数可使我们查看 Lerna 运行时的命令执行信息；
 
-
-```
-
-### Verdaccio
-
-```bash
-$ npm install --global verdaccio
-
-$ verdaccio
-
-# 本地 npm 仓库
-# http://localhost:4873
-
-1. Login
-npm adduser --registry http://localhost:4873/
-root
-123456
-2. Publish
-npm publish --registry http://localhost:4873/
-3. Refresh this page
-
-# 每当执行 lerna publish 时，子项目所构建成的 package 将会发布在本地 npm 仓库中，
-# 每当执行 lerna bootstrap 时，Verdaccio 将会放行，让您成功从远程 npm 仓库中拉取相应的代码。
-
-npm unpublish --force yourPackage
 
 ```
 

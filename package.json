@@ -2,11 +2,9 @@
   "name": "monorepo",
   "version": "1.0.0",
   "description": "",
-  "workspaces": {
-    "packages": [
-      "packages/**"
-    ]
-  },
+  "workspaces": [
+    "packages/**"
+  ],
   "private": true,
   "scripts": {
     "prettier": "prettier --config .prettierrc --write {.,components,lib,pages}/*.{js,css,json,md}",
