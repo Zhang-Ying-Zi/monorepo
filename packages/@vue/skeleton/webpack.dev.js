@@ -8,24 +8,24 @@ module.exports = merge(common, {
   devtool: "inline-source-map",
   output: {
     filename: "[name].js",
-    chunkFilename: "[name].js"
+    chunkFilename: "[name].js",
   },
   devServer: {
     index: "index.html",
     hot: true,
     contentBase: path.resolve(__dirname, "./build"),
     port: 3700,
-    noInfo: true
+    noInfo: true,
     //host: '192.168.18.145',
   },
   module: {
     rules: [
       {
         test: /\.(css|less)$/,
-        use: ["vue-style-loader", "css-loader", "postcss-loader", "less-loader"]
-      }
-    ]
+        use: ["vue-style-loader", "css-loader", "postcss-loader", "less-loader"],
+      },
+    ],
   },
   plugins: [new webpack.HotModuleReplacementPlugin()],
-  resolve: { alias: { vue: "vue/dist/vue.js" } }
+  resolve: { alias: { vue: "vue/dist/vue.js" } },
 });
