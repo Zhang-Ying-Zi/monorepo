@@ -89,9 +89,10 @@ npm adduser --registry http://localhost:4873/
 root
 123456
 
-2. Publish
+2. Publish (如果用lerna可跳过)
 npm config set max_body_size 100mb --registry http://localhost:4873/
 npm publish --registry http://localhost:4873/
+
 3. Refresh this page
 
 # 每当执行 lerna publish 时，子项目所构建成的 package 将会发布在本地 npm 仓库中，
