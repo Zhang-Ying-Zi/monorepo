@@ -2,7 +2,7 @@
   "name": "global-banner2",
   "description": "banner组件2",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "snapshot": "https://img.alicdn.com/imgextra/i2/O1CN011OBgOQ1lgQnWNjjtA_!!6000000004848-0-tps-750-291.jpg",
   "schema": {
     "type": "object",

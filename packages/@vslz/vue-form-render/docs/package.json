@@ -1,7 +1,7 @@
 {
   "name": "vue-form-render",
   "private": "true",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "vue3 form render docs",
   "scripts": {
     "docs:dev": "vuepress dev docs",
