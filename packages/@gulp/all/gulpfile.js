@@ -1,6 +1,5 @@
 // const fs = require("fs");
 const gulp = require("gulp");
-
 const plugins = require("gulp-load-plugins")();
 // const pkg = JSON.parse(fs.readFileSync("./package.json", "utf8"));
 
