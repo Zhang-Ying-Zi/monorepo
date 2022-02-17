@@ -26,8 +26,8 @@
     // "prettier/prettier": "error",
     // "arrow-body-style": "off",
     // "prefer-arrow-callback": "off",
-    // 每行不能超过 80 个字符
-    "max-len": ["error", { "code": 80 }]
+    // 每行不能超过 120 个字符
+    "max-len": ["error", { "code": 120 }]
   },
   "overrides": [
     // 处理 JS 文件
