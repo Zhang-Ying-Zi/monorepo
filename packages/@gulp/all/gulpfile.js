@@ -1,8 +1,7 @@
-const fs = require("fs");
+// const fs = require("fs");
 const gulp = require("gulp");
 const plugins = require("gulp-load-plugins")();
-
-const pkg = JSON.parse(fs.readFileSync("./package.json", "utf8"));
+// const pkg = JSON.parse(fs.readFileSync("./package.json", "utf8"));
 
 gulp.task("clean", function () {
   return gulp.src("./dist/*").pipe(plugins.clean());

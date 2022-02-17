@@ -39,6 +39,9 @@
         "allowImportExportEverywhere": false,
         "ecmaFeatures": {
           "globalReturn": false
+        },
+        "babelOptions": {
+          "rootMode": "upward"
         }
       }
     },
