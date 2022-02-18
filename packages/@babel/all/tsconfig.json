@@ -1,22 +1,22 @@
 {
-  "extends": "../../../tsconfig.json" // 继承 packages 目录下通用配置
-  // "compilerOptions": {
-  //   "jsx": "react",
-  //   // Target latest version of ECMAScript.
-  //   "target": "es5", // "ES3" (default), "ES5", "ES6"/"ES2015", "ES2016", "ES2017" or "ESNext".
-  //   // Search under node_modules for non-relative imports.
-  //   "moduleResolution": "node",
-  //   // Process & infer types from .js files.
-  //   "allowJs": true,
-  //   // Don't emit; allow Babel to transform files.
-  //   "noEmit": true,
-  //   // Enable strictest settings like strictNullChecks & noImplicitAny.
-  //   "strict": true,
-  //   // Disallow features that require cross-file information for emit.
-  //   "isolatedModules": true,
-  //   // Import non-ES modules as default imports.
-  //   "esModuleInterop": true,
-  //   "sourceMap": true
-  // },
-  // "include": ["./src/**/*"]
+  // "extends": "../../../tsconfig.json" // 继承 packages 目录下通用配置
+  "compilerOptions": {
+    "jsx": "react",
+    // Target latest version of ECMAScript.
+    "target": "es5", // "ES3" (default), "ES5", "ES6"/"ES2015", "ES2016", "ES2017" or "ESNext".
+    // Search under node_modules for non-relative imports.
+    "moduleResolution": "node",
+    // Process & infer types from .js files.
+    "allowJs": true,
+    // Don't emit; allow Babel to transform files.
+    "noEmit": true,
+    // Enable strictest settings like strictNullChecks & noImplicitAny.
+    "strict": true,
+    // Disallow features that require cross-file information for emit.
+    "isolatedModules": true,
+    // Import non-ES modules as default imports.
+    "esModuleInterop": true,
+    "sourceMap": true
+  },
+  "include": ["./src/**/*"]
 }
