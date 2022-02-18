@@ -67,16 +67,12 @@ module.exports = {
       file: "package.json",
       default: {
         scripts: {
+          prepare:
+            "npx husky-init && npm install && npx husky add .husky/pre-commit 'npx lint-staged' && npx husky add .husky/commit-msg 'npx commitlint --edit $1'",
           eslint: "eslint . --cache --fix",
           compileJS: "babel src --out-dir dist",
           compileTS: "babel src --out-dir dist --extensions '.ts'",
           compile: "npm run compileJS && npm run compileTS",
-        },
-        husky: {
-          hooks: {
-            "pre-commit": "npx lint-staged",
-            "commit-msg": "npx commitlint --edit $1",
-          },
         },
         dependencies: {},
         devDependencies: {
