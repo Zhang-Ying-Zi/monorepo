@@ -1,6 +1,5 @@
 {
   "extends": "../../../tsconfig.json", // 继承 packages 目录下通用配置
   "compilerOptions": {},
-  "exclude": ["node_modules", "lib", "src/**/*.test.ts"],
-  "include": ["src/**/*.ts", "index.ts"]
+  "include": ["./index.ts"]
 }

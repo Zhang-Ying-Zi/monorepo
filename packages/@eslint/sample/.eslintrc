@@ -1,6 +1,6 @@
 {
   // 继承
-  "extends": "../../../.eslintrc",
+  "extends": "../../../.eslintrc.js",
   "env": {
     // 识别 ES 的代码，使用 ECMAScript 2021 自动设置 ecmaVersion parser 为 12，
     "es2021": true
