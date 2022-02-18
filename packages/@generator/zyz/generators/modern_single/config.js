@@ -49,8 +49,8 @@ module.exports = {
       output: ".prettierignore",
     },
     {
-      input: ".prettierrc",
-      output: ".prettierrc",
+      input: ".prettierrc.js",
+      output: ".prettierrc.js",
     },
     {
       input: "commitlint.config.js",
