@@ -35,6 +35,7 @@ export class RxJsStore<T> {
   dispatch = (action: Action): void => {
     const oldState = this._state.getValue();
     const newState = this._reducer(oldState, action);
+    console.log(oldState, newState);
     this._state.next(newState);
   };
 
