@@ -22,7 +22,10 @@ export class RxJsStore<T> {
   }
 
   select<K extends keyof T>(key: K): Observable<T[K]> {
-    return this._state.pipe(distinctUntilKeyChanged(key), map(x => x[key]));
+    return this._state.pipe(
+      distinctUntilKeyChanged(key),
+      map((x) => x[key])
+    );
   }
 
   subscribe(callback: (state: T) => void): Subscription {
@@ -41,5 +44,5 @@ export class RxJsStore<T> {
   ): Promise<void> => {
     const payload = await runner(this._state.getValue());
     this.dispatch({ type, payload });
-  }
+  };
 }
