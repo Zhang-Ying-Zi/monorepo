@@ -25,7 +25,7 @@ module.exports = class extends Generator {
 
     let prompts = [];
     for (let prompt of config.prompts) {
-      if (this.options.hasOwnProperty(prompt.name)) {
+      if (Object.prototype.hasOwnProperty.call(this.option, "prompt.name")) {
         // this.options 可能是由composeWith传入
         // 权限最高
         // 如果是composeWith传入，请保持同一参数都由composeWith传入，因为yo-rc.json中的顺序不固定，可能会冲突
@@ -35,8 +35,14 @@ module.exports = class extends Generator {
         let isFindInOtherYoConfig = false;
         // 其他generator的配置项
         for (let otherYoConfigKey in this.prevShareConfig) {
-          if (this.prevShareConfig[otherYoConfigKey].hasOwnProperty(prompt.name)) {
-            templateData[prompt.name] = this.prevShareConfig[otherYoConfigKey][prompt.name];
+          if (
+            Object.prototype.hasOwnProperty.call(
+              this.prevShareConfig[otherYoConfigKey],
+              prompt.name
+            )
+          ) {
+            templateData[prompt.name] =
+              this.prevShareConfig[otherYoConfigKey][prompt.name];
             isFindInOtherYoConfig = true;
             break;
           }
@@ -65,7 +71,11 @@ module.exports = class extends Generator {
     };
     // from local template using EJS
     const copyTpl = (input, output, data) => {
-      this.fs.copyTpl(this.templatePath(input), this.destinationPath(output), data);
+      this.fs.copyTpl(
+        this.templatePath(input),
+        this.destinationPath(output),
+        data
+      );
     };
 
     // Make Dirs
@@ -78,7 +88,8 @@ module.exports = class extends Generator {
       let fileJSON = this.fs.readJSON(file.file);
       fileJSON = _.merge(fileJSON, file.default || {});
       for (let keyData in templateData) {
-        if (templateData[keyData] && file[keyData]) fileJSON = _.merge(fileJSON, file[keyData] || {});
+        if (templateData[keyData] && file[keyData])
+          fileJSON = _.merge(fileJSON, file[keyData] || {});
       }
       this.fs.writeJSON(file.file, fileJSON);
     });
@@ -92,20 +103,15 @@ module.exports = class extends Generator {
 
     // Get Remote Templates
     let done = this.async();
-    remote(
-      "Zhang-Ying-Zi",
-      // "generator-zyz-webpack-source",
-      "monorepo",
-      (err, cachePath) => {
-        // Copy Files
-        config.filesToCopy.forEach((file) => {
-          if (!file.if || templateData[file.if]) {
-            copy(path.join(cachePath, file.input), file.output);
-          }
-        });
-        done();
-      }
-    );
+    remote("Zhang-Ying-Zi", "monorepo", (err, cachePath) => {
+      // Copy Files
+      config.filesToCopy.forEach((file) => {
+        if (!file.if || templateData[file.if]) {
+          copy(path.join(cachePath, file.input), file.output);
+        }
+      });
+      done();
+    });
   }
 
   // install() {

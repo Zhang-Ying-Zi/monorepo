@@ -67,10 +67,12 @@ module.exports = {
       file: "package.json",
       default: {
         scripts: {
-          watch: "cross-env NODE_ENV=development webpack --watch --config webpack.config.js",
+          watch:
+            "cross-env NODE_ENV=development webpack --watch --config webpack.config.js",
           start:
             "cross-env NODE_ENV=development webpack serve --hot --mode development --config webpack.config.js --open --color",
-          build: "cross-env NODE_ENV=production webpack --mode production --config webpack.config.js",
+          build:
+            "cross-env NODE_ENV=production webpack --mode production --config webpack.config.js",
         },
         devDependencies: {
           "@types/node": "^14.14.37",

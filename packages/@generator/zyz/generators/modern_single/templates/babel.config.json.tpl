@@ -1,4 +1,5 @@
 {
+  // "extends": "../../../tsconfig.json" // 继承
   "plugins": [
     "@babel/proposal-class-properties",
     "@babel/proposal-object-rest-spread"

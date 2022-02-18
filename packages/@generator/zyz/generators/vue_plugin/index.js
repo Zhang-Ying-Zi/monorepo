@@ -1,8 +1,8 @@
 const Generator = require("yeoman-generator");
-const remote = require("yeoman-remote");
+// const remote = require("yeoman-remote");
 const config = require("./config.js");
 const mkdirp = require("mkdirp");
-const path = require("path");
+// const path = require("path");
 const _ = require("lodash");
 
 let templateData = { pluginName: "myPlugin" };
@@ -30,13 +30,15 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    // from github
-    const copy = (input, output) => {
-      this.fs.copy(input, this.destinationPath(output));
-    };
-    // from local template using EJS
+    // const copy = (input, output) => {
+    //   this.fs.copy(input, this.destinationPath(output));
+    // };
     const copyTpl = (input, output, data) => {
-      this.fs.copyTpl(this.templatePath(input), this.destinationPath(output), data);
+      this.fs.copyTpl(
+        this.templatePath(input),
+        this.destinationPath(output),
+        data
+      );
     };
 
     // Make Dirs
@@ -49,7 +51,8 @@ module.exports = class extends Generator {
       let fileJSON = this.fs.readJSON(file.file);
       fileJSON = _.merge(fileJSON, file.default || {});
       for (let keyData in templateData) {
-        if (templateData[keyData] && file[keyData]) fileJSON = _.merge(fileJSON, file[keyData] || {});
+        if (templateData[keyData] && file[keyData])
+          fileJSON = _.merge(fileJSON, file[keyData] || {});
       }
       this.fs.writeJSON(file.file, fileJSON);
     });
@@ -60,11 +63,12 @@ module.exports = class extends Generator {
     //     copyTpl(file.input, file.output, templateData);
     //   }
     // });
-    copyTpl("plugin.js", templateData.pluginName + ".js", {});
 
-    // Get Remote Templates
+    copyTpl("plugin.js.tpl", templateData.pluginName + ".js", {});
+
+    // // Get Remote Templates
     // let done = this.async();
-    // remote("Zhang-Ying-Zi", "generator-zyz-vue-source", (err, cachePath) => {
+    // remote("Zhang-Ying-Zi", "monorepo", (err, cachePath) => {
     //   // Copy Files
     //   config.filesToCopy.forEach((file) => {
     //     if (!file.if || templateData[file.if]) {

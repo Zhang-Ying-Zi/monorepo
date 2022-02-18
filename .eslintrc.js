@@ -27,7 +27,7 @@ module.exports = {
     // "arrow-body-style": "off",
     // "prefer-arrow-callback": "off",
     // 每行不能超过 120 个字符
-    "max-len": ["error", { code: 120 }],
+    // "max-len": ["error", { code: 120 }],
   },
   settings: {
     react: {

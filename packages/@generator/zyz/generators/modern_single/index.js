@@ -8,12 +8,14 @@ const _ = require("lodash");
 let templateData = {
   typescript: false,
   react: false,
+  vue: false,
 };
 
 module.exports = class extends Generator {
   constructor(args, opts) {
     super(args, opts);
 
+    // This method adds support for a `--babel` flag
     for (let optionName in config.options) {
       this.option(optionName, config.options[optionName]);
     }
