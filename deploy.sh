@@ -4,7 +4,7 @@
 set -e
 
 git add .
-git commit -m 'deploy'
+git commit -m 'refactor: all'
 git push origin master
 
 # 如果发布到 https://<USERNAME>.github.io
