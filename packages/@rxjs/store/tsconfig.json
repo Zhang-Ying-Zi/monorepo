@@ -1,5 +1,4 @@
 {
   "extends": "../../../tsconfig.json", // 继承 packages 目录下通用配置
-  "compilerOptions": {},
-  "include": ["./index.ts"]
+  "compilerOptions": {}
 }
