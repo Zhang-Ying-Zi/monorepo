@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/restrict-plus-operands */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { Action, RxJsStore } from "./RxJsStore";
 
 import * as chai from "chai";
@@ -55,6 +57,7 @@ describe("it should update the state and let user subscribe to changes", () => {
   it("should update the state asyncronously", (done) => {
     let counter = 0;
     store.select("counter").subscribe((value) => (counter = value));
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     store.asyncDispatch(
       "INCREMENT",
       () =>

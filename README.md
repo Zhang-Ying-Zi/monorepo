@@ -134,17 +134,28 @@ lerna add @mono/project1 '@mono/project{2,3}'
 ### commitlint
 
 ```bash
-# commitlint 可以帮助我们检查提交的 commit 信息，它强制约束我们的 commit 信息必须在开头附加指定类型，用于标示本次提交的大致意图，支持的类型关键字有：
-
-feat：表示添加一个新特性；
-chore：表示做了一些与特性和修复无关的「家务事」；
-fix：表示修复了一个 Bug；
-refactor：表示本次提交是因为重构了代码；
-style：表示代码美化或格式化；
 
 npm i -D @commitlint/cli @commitlint/config-conventional @commitlint/config-lerna-scopes commitlint husky lerna-changelog --registry=https://registry.npm.taobao.org
 
-git commit -m "feat(project1): add a attractive button" # 注意，我们省略了 @mono 的项目前缀
+# commitlint 可以帮助我们检查提交的 commit 信息，它强制约束我们的 commit 信息必须在开头附加指定类型，用于标示本次提交的大致意图
+
+git commit -m <type>[optional scope]: <description>
+git commit -m 'fix(account): 修复xxx的bug'
+
+##### 常用type
+
+build	编译相关的修改，例如发布版本、对项目构建或者依赖的改动
+chore	其他修改, 比如改变构建流程、或者增加依赖库、工具等
+ci	持续集成修改
+docs	文档修改
+feat	新特性、新功能
+fix	修改bug
+perf	优化相关，比如提升性能、体验
+refactor	代码重构
+revert	回滚到上一个版本
+style	代码格式修改, 注意不是 css 修改
+test	测试用例修改
+
 
 # 检查 commit 信息是否通过 commitlint 的检查
 echo "build(project1): change something" | npx commitlint

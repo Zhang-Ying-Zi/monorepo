@@ -73,9 +73,10 @@
   },
   "exclude": [
     "node_modules",
-    "dist"
+    "dist",
+    "lib"
     // "**/*.spec.ts",
-    // "**/*.test.ts",
+    // "**/*.test.ts"
   ],
   "include": ["**/src/**/*.ts", "**/*.ts"]
 }
