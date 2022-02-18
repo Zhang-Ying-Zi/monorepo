@@ -29,20 +29,16 @@ module.exports = {
       output: "tsconfig.json",
     },
     {
+      input: "babel.config.json",
+      output: "babel.config.json",
+    },
+    {
       input: ".eslintignore",
       output: ".eslintignore",
     },
     {
       input: ".eslintrc.js",
       output: ".eslintrc.js",
-    },
-    {
-      input: ".eslintrc.js",
-      output: ".eslintrc.js",
-    },
-    {
-      input: "babel.config.json",
-      output: "babel.config.json",
     },
     {
       input: ".lintstagedrc.js",
@@ -59,6 +55,10 @@ module.exports = {
     {
       input: "commitlint.config.js",
       output: "commitlint.config.js",
+    },
+    {
+      input: ".stylelintrc.js",
+      output: ".stylelintrc.js",
     },
   ],
   filesToRender: [],
