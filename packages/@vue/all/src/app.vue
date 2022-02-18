@@ -1,26 +1,21 @@
 <template>
   <div>
     <p v-once :class="$style.text">这个将不会改变: {{ message }}</p>
-    <p v-bind:title="messageTitle">{{ reversedMessageComputed }}</p>
+    <p :title="messageTitle">{{ reversedMessageComputed }}</p>
     <a :[attributeName]="url">动态bind attributeName</a>
-
     <p>{{ rawHtml }}</p>
     <p v-html="rawHtml"></p>
-
-    <button v-on:click="reverseMessage">反转消息</button>
+    <button @click="reverseMessage">反转消息</button>
     <button @click="reverseMessage">反转消息缩写</button>
-    <button v-on:[eventName]="reverseMessage">动态bind eventName</button>
+    <button @[eventName]="reverseMessage">动态bind eventName</button>
     <form @submit.prevent="onSubmit">submit</form>
-
     <p>Ask a yes/no question: <input v-model="question" /></p>
     <p>{{ answer }}</p>
-
     <div class="static" :class="{ active: isActive, 'text-danger': hasError }"></div>
     <div :class="classObject"></div>
     <div :class="[activeClass, errorClass]"></div>
     <div :style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
     <div :style="styleObject"></div>
-
     <p v-if="seen">现在你看到我了</p>
     <h1 v-else>Oh no 😢</h1>
     <template v-if="seen">
@@ -32,7 +27,6 @@
     <div v-else-if="type === 'B'">B</div>
     <div v-else-if="type === 'C'">C</div>
     <div v-else>Not A/B/C</div>
-
     <template v-if="loginType === 'username'">
       <label>Username</label>
       <input key="username-input" placeholder="Enter your username" />
@@ -41,11 +35,9 @@
       <label>Email</label>
       <input key="email-input" placeholder="Enter your email address" />
     </template>
-
     <!-- v-show 的元素始终会被渲染并保留在 DOM 中。v-show 只是简单地切换元素的 CSS property display。
     注意，v-show 不支持 <template> 元素，也不支持 v-else。 -->
     <h4 v-show="seen">Hello!</h4>
-
     <ol>
       <li v-for="(todo, index) in todos" :key="todo.text">{{ index }}-{{ todo.text }}</li>
     </ol>
@@ -80,7 +72,6 @@
     </ul>
     <!-- 不推荐在同一元素上使用 v-if 和 v-for
     当它们处于同一节点，v-for 的优先级比 v-if 更高，这意味着 v-if 将分别重复运行于每个 v-for 循环中。 -->
-
     <div>
       <p>The button above has been clicked {{ counter }} times.</p>
       <button @click="counter += 1">Add 1</button>
@@ -112,7 +103,6 @@
       <div @scroll.passive="onScroll">...</div>
       <!-- 不要把 .passive 和 .prevent 一起使用，因为 .prevent 将会被忽略，同时浏览器可能会向你展示一个警告。请记住，.passive 会告诉浏览器你不想阻止事件的默认行为。 -->
       <!-- 使用修饰符时，顺序很重要；相应的代码会以同样的顺序产生。因此，用 v-on:click.prevent.self 会阻止所有的点击，而 v-on:click.self.prevent 只会阻止对元素自身的点击。 -->
-
       <!-- 只有在 `key` 是 `Enter` 时调用 `vm.submit()` -->
       <input @keyup.enter="submit" />
       <input @keyup.page-down="onPageDown" />
@@ -126,7 +116,7 @@
         .down
         .left
         .right -->
-      <input @keyup.13="submit" />
+      <!-- <input @keyup.13="submit" /> -->
       <!-- keyCode 的事件用法已经被废弃了并可能不会被最新的浏览器支持。 -->
       <!-- 你还可以通过全局 config.keyCodes 对象自定义按键修饰符别名：
       // 可以使用 `v-on:keyup.f1`
@@ -137,7 +127,8 @@
         .alt
         .shift
         .meta -->
-      <!-- 请注意修饰键与常规按键不同，在和 keyup 事件一起用时，事件触发时修饰键必须处于按下状态。换句话说，只有在按住 ctrl 的情况下释放其它按键，才能触发 keyup.ctrl。而单单释放 ctrl 也不会触发事件。如果你想要这样的行为，请为 ctrl 换用 keyCode：keyup.17。 -->
+      <!-- 请注意修饰键与常规按键不同，在和 keyup 事件一起用时，事件触发时修饰键必须处于按下状态。
+      换句话说，只有在按住 ctrl 的情况下释放其它按键，才能触发 keyup.ctrl。而单单释放 ctrl 也不会触发事件。如果你想要这样的行为，请为 ctrl 换用 keyCode：keyup.17。 -->
 
       <!-- 即使 Alt 或 Shift 被一同按下时也会触发 -->
       <button @click.ctrl="onClick">A</button>
@@ -198,7 +189,8 @@
       </select>
       <span>Selected: {{ selected }}</span>
     </div>
-    <!-- 如果 v-model 表达式的初始值未能匹配任何选项，<select> 元素将被渲染为“未选中”状态。在 iOS 中，这会使用户无法选择第一个选项。因为这样的情况下，iOS 不会触发 change 事件。因此，更推荐像上面这样提供一个值为空的禁用选项。 -->
+    <!-- 如果 v-model 表达式的初始值未能匹配任何选项，<select> 元素将被渲染为“未选中”状态。
+      在 iOS 中，这会使用户无法选择第一个选项。因为这样的情况下，iOS 不会触发 change 事件。因此，更推荐像上面这样提供一个值为空的禁用选项。 -->
 
     <div>
       <select v-model="selected2" multiple style="width: 50px">
@@ -235,14 +227,14 @@
     <base-checkbox v-model="lovingVue" @change="log"></base-checkbox>
 
     <!-- <base-input> 组件根元素实际上是一个 <label> 元素,所以.native失效 -->
-    <base-input @focus.native="onFocus"></base-input>
+    <!-- <base-input @focus.native="onFocus"></base-input> -->
     <base-input @focus="onFocus"></base-input>
 
     <!-- <text-document :title.sync="doc.title"></text-document> -->
 
     <base-layout>
       <!-- 任何没有被包裹在带有 v-slot 的 <template> 中的内容都会被视为默认插槽的内容。 -->
-      <template v-slot:header>
+      <template #header>
         <h1>Here might be a page title</h1>
       </template>
 
@@ -270,7 +262,7 @@
     <!-- 使用 router-link 组件来导航. -->
     <!-- 通过传入 `to` 属性指定链接. -->
     <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
-    <router-link to="/fullpage">Go to Full Page</router-link>
+    <router-link to="/fullpage"> Go to Full Page </router-link>
     <!-- 路由出口 -->
     <!-- 路由匹配到的组件将渲染在这里 -->
     <router-view></router-view>
@@ -326,7 +318,7 @@ export default Vue.extend({
       ],
 
       attributeName: "href",
-      url: "https://www.google.com",
+      url: "https://www.baidu.com",
       eventName: "click",
 
       firstName: "Foo",
@@ -407,6 +399,7 @@ export default Vue.extend({
     },
     // 如果 `question` 发生改变，这个函数就会运行
     question: function (newQuestion, oldQuestion) {
+      console.log(newQuestion, oldQuestion);
       this.answer = "Waiting for you to stop typing...";
       this.debouncedGetAnswer();
     },

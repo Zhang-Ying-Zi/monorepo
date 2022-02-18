@@ -1,9 +1,9 @@
 {
   "extends": [
     "eslint:recommended", // eslint 自己的推荐规则，最佳实践最小集
+    "plugin:react/recommended",
     // "prettier",
-    "plugin:prettier/recommended", // 禁用 eslint 关于代码的风格的规则，使用 prettier 的风格
-    "plugin:react/recommended"
+    "plugin:prettier/recommended" // 禁用 eslint 关于代码的风格的规则，使用 prettier 的风格
   ],
   "env": {
     "browser": true,
@@ -28,6 +28,11 @@
     // "prefer-arrow-callback": "off",
     // 每行不能超过 120 个字符
     "max-len": ["error", { "code": 120 }]
+  },
+  "settings": {
+    "react": {
+      "version": "detect" // React version. "detect" automatically picks the version you have installed.
+    }
   },
   "overrides": [
     // 处理 JS 文件
@@ -67,7 +72,11 @@
     // 处理 vue 文件
     {
       "files": ["**/*.vue"], // 只处理 vue 文件
-      "extends": ["plugin:vue/vue3-recommended"] // 使用 vue3 的推荐规则
+      "extends": [
+        // "plugin:vue/vue3-recommended",
+        "plugin:vue/recommended", // Use this if you are using Vue.js 2.x.
+        "plugin:prettier/recommended"
+      ]
     }
   ]
 }
