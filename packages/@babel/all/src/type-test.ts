@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-inferrable-types
 const x: number = 0;
-
-export { };
+console.log(x);
+export { x };

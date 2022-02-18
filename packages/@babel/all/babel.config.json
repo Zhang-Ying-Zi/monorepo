@@ -1,16 +1,18 @@
 {
-  "plugins": ["@babel/proposal-class-properties", "@babel/proposal-object-rest-spread"],
-  "presets": [
-    [
-      "@babel/env",
-      {
-        "targets": "> 0.25%, not dead",
-        "useBuiltIns": "usage",
-        "corejs": "3",
-        "modules": "umd"
-      }
-    ],
-    ["@babel/preset-react", {}],
-    ["@babel/preset-typescript", {}]
-  ]
+  // 继承
+  "extends": "../../../babel.config.json"
+  // "plugins": ["@babel/proposal-class-properties", "@babel/proposal-object-rest-spread"],
+  // "presets": [
+  //   [
+  //     "@babel/env",
+  //     {
+  //       "targets": "> 0.25%, not dead",
+  //       "useBuiltIns": "usage",
+  //       "corejs": "3",
+  //       "modules": "umd"
+  //     }
+  //   ],
+  //   ["@babel/preset-react", {}],
+  //   ["@babel/preset-typescript", {}]
+  // ]
 }
