@@ -68,7 +68,7 @@ module.exports = {
       default: {
         scripts: {
           prepare:
-            "git init && npx husky install && npx husky add .husky/pre-commit 'npx lint-staged' && npx husky add .husky/commit-msg 'npx commitlint --edit ``$1``'",
+            "git init && npx husky install && npx husky add .husky/pre-commit 'npx lint-staged' && npx husky add .husky/commit-msg 'npx commitlint --edit ``\u0024````\u0031``'",
           eslint: "eslint . --cache --fix",
           compileJS: "babel src --out-dir dist",
           compileTS: "babel src --out-dir dist --extensions '.ts'",
