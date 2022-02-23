@@ -22,14 +22,13 @@ module.exports = function (BuildMode) {
           importLoaders: appendLoaders.length,
         },
       },
-      // 第三方css库不使用module模式
       !isVendor && {
         loader: "css-loader",
         options: {
           sourceMap: true,
           importLoaders: 1 + appendLoaders.length,
           modules: {
-            localIdentName: "[name]_[local]_[hash:base64:4]",
+            localIdentName: "[name]-[local]-[hash:base64:4]",
           },
         },
       },
