@@ -6,3 +6,4 @@ lib/
 .lintstagedrc.js
 .prettierrc.js
 .stylelintrc.js
+jest.config.js

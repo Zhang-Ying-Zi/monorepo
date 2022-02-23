@@ -1,0 +1,89 @@
+.flex-container {
+  display: flex;
+}
+
+.flex-container-inline {
+  display: inline-flex;
+}
+
+/* Flex容器属性 */
+
+/* 方向 */
+.flex-direction {
+  /* flex-direction: row || column || row-reverse || column-reverse; */
+  flex-direction: row;
+}
+
+/* 换行 */
+.flex-wrap {
+  /* flex-wrap: wrap || nowrap || wrap-reverse; */
+  flex-wrap: wrap;
+}
+
+.flex-flow {
+  /* flex-flow:flex-direction flex-wrap; */
+  flex-flow: row wrap;
+}
+
+/* Flex项目在Main-Axis上的对齐方式 */
+.justify-content {
+  /* justify-content: flex-start || flex-end || center || space-between || space-around || space-evenly; */
+  justify-content: flex-start;
+}
+
+/* Flex项目在Cross-Axis对齐方式 */
+.align-items {
+  /* align-items: flex-start || flex-end || center || stretch || baseline; */
+  align-items: stretch;
+}
+
+/* align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。 */
+.align-content {
+  /* align-content: flex-start | flex-end | center | space-between | space-around | stretch; */
+  align-content: stretch;
+}
+
+/* Flex项目属性,Note that float, clear and vertical-align have no effect on a flex item. */
+
+/* 根据order值重新排序,从低到高 */
+.order {
+  /* order:0 || positive number; */
+  order: 0;
+}
+
+/* flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。 */
+.flex-grow {
+  /* flex-grow:0 || positive number; */
+  flex-grow: 0;
+}
+
+/* flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。 */
+
+/* 如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。 */
+
+/* 负值对该属性无效 */
+.flex-shrink {
+  /* flex-shrink:0 || positive number; */
+  flex-shrink: 1;
+}
+
+.flex-basis {
+  /* flex-basis:% || em || rem || px; */
+  flex-basis: auto;
+}
+
+/* flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。 */
+
+/* 建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。 */
+
+/* 该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto) */
+.flex {
+  /* flex:flex-grow flex-shrink flex-basis; */
+  flex: 0 1 auto;
+}
+
+/* the one specified by align-items */
+.align-self {
+  /* align-self: auto | flex-start | flex-end | center | baseline | stretch; */
+  align-self: auto;
+}

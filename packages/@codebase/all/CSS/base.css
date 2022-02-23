@@ -1,0 +1,37 @@
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.modal-content {
+  overscroll-behavior-y: contain;
+  overflow-y: auto;
+}
+
+.message-bubble {
+  max-width: calc(100% - var(--actions-width, 70px));
+}
+
+@media (min-height: 600px) {
+  .aside-secondary {
+    position: sticky;
+    bottom: 0;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.flex-overflow {
+  overflow-wrap: break-word;
+  min-width: 0;
+}

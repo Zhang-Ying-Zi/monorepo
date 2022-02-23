@@ -34,6 +34,7 @@ module.exports = {
       version: "detect", // React version. "detect" automatically picks the version you have installed.
     },
   },
+  ignorePatterns: ["**/*.test.js"],
   overrides: [
     // 处理 JS 文件
     {

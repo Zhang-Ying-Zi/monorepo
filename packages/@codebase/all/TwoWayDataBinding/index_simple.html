@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Two-Way Data Binding</title>
+  </head>
+
+  <body>
+    <input type="text" id="input" />
+    <p id="data"></p>
+  </body>
+
+  <script>
+    const obj = {};
+    const input = document.getElementById('input');
+
+    // 数据劫持，实现数据->视图的绑定
+    Object.defineProperty(obj, 'name', {
+      configurable: true,
+      enumerable: true,
+      get() {
+        return input.value;
+      },
+      set(newVal) {
+        input.value = newVal;
+        document.getElementById('data').innerHTML = newVal;
+      }
+    });
+    
+    // 监听输入框，实现视图->数据的绑定
+    input.addEventListener('keyup', () => {
+      obj.name = input.value;
+    })
+  </script>
+</html>
