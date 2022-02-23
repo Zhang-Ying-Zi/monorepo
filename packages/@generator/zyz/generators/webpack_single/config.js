@@ -96,6 +96,8 @@ module.exports = {
           "sass-loader": "^11.0.1",
           "script-loader": "^0.7.2",
           "style-loader": "^2.0.0",
+          stylus: "^0.56.0",
+          "stylus-loader": "^6.2.0",
           "terser-webpack-plugin": "^5.1.1",
           webpack: "^5.30.0",
           "webpack-bundle-analyzer": "^4.4.0",

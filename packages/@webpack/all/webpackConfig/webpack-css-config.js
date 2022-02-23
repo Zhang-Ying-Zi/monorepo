@@ -101,6 +101,18 @@ module.exports = function (BuildMode) {
             },
           ]),
         },
+        {
+          test: /\.styl$/,
+          exclude: /node_modules/,
+          use: generateBaseCssLoader([
+            {
+              loader: "stylus-loader",
+              options: {
+                sourceMap: true,
+              },
+            },
+          ]),
+        },
       ],
     },
     plugins: [
