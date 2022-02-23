@@ -1,7 +1,7 @@
 const path = require("path");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 
-module.exports = function(BuildMode) {
+module.exports = function (BuildMode) {
   const isDevelopment = BuildMode === "development";
 
   return {
@@ -16,21 +16,21 @@ module.exports = function(BuildMode) {
               options: {
                 configFile: path.resolve(__dirname, "../babel.config.json"),
                 plugins: [
-                  isDevelopment && require.resolve("react-refresh/babel")
-                ].filter(Boolean)
-              }
+                  isDevelopment && require.resolve("react-refresh/babel"),
+                ].filter(Boolean),
+              },
             },
             {
               loader: "ts-loader",
               options: {
                 transpileOnly: true,
-                experimentalWatchApi: true
-              }
-            }
-          ]
-        }
-      ]
+                experimentalWatchApi: true,
+              },
+            },
+          ],
+        },
+      ],
     },
-    plugins: [isDevelopment && new ReactRefreshWebpackPlugin()].filter(Boolean)
+    plugins: [isDevelopment && new ReactRefreshWebpackPlugin()].filter(Boolean),
   };
 };

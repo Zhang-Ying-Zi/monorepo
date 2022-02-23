@@ -2,7 +2,7 @@ const autoprefixer = require("autoprefixer");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
-module.exports = function(BuildMode) {
+module.exports = function (BuildMode) {
   const isDevelopment = BuildMode === "development";
   const isProduction = BuildMode === "production";
 

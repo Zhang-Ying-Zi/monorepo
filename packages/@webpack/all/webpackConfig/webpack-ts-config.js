@@ -1,6 +1,7 @@
 const path = require("path");
 
-module.exports = function(BuildMode) {
+// eslint-disable-next-line no-unused-vars
+module.exports = function (BuildMode) {
   return {
     module: {
       rules: [
@@ -11,20 +12,20 @@ module.exports = function(BuildMode) {
             {
               loader: "babel-loader",
               options: {
-                configFile: path.resolve(__dirname, "../babel.config.json")
-              }
+                configFile: path.resolve(__dirname, "../babel.config.json"),
+              },
             },
             {
               loader: "ts-loader",
               options: {
                 transpileOnly: true,
-                experimentalWatchApi: true
-              }
-            }
-          ]
-        }
-      ]
+                experimentalWatchApi: true,
+              },
+            },
+          ],
+        },
+      ],
     },
-    plugins: []
+    plugins: [],
   };
 };

@@ -13,7 +13,8 @@ const tsConfig = require("./webpackConfig/webpack-ts-config.js");
 const reactConfig = require("./webpackConfig/webpack-react-config.js");
 const vueConfig = require("./webpackConfig/webpack-vue-config.js");
 
-const BuildMode = process.env.NODE_ENV === "development" ? "development" : "production";
+const BuildMode =
+  process.env.NODE_ENV === "development" ? "development" : "production";
 const isDevelopment = BuildMode === "development";
 const isProduction = BuildMode === "production";
 const EntryPathBase = path.resolve(__dirname, "src");
@@ -81,7 +82,9 @@ const WebpackConfig = {
     // mangleExports: "size",
     // // rename export names to shorter names
     minimize: true,
-    minimizer: [isProduction && new TerserPlugin({ exclude: /node_modules/ })].filter(Boolean),
+    minimizer: [
+      isProduction && new TerserPlugin({ exclude: /node_modules/ }),
+    ].filter(Boolean),
     splitChunks: {
       chunks: "all", // all async initial
       minSize: 1, // default to 20000 bytes

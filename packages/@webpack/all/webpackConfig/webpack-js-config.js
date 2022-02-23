@@ -1,6 +1,7 @@
 const path = require("path");
 
-module.exports = function(BuildMode) {
+// eslint-disable-next-line no-unused-vars
+module.exports = function (BuildMode) {
   return {
     module: {
       rules: [
@@ -10,13 +11,13 @@ module.exports = function(BuildMode) {
           use: {
             loader: "babel-loader",
             options: {
-              configFile: path.resolve(__dirname, "../babel.config.json")
+              configFile: path.resolve(__dirname, "../babel.config.json"),
               // presets: ["@babel/preset-env"],
-            }
-          }
-        }
-      ]
+            },
+          },
+        },
+      ],
     },
-    plugins: []
+    plugins: [],
   };
 };
