@@ -1,4 +1,5 @@
 dist
+build
 
 ### Node ###
 # Logs
@@ -7,6 +8,7 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
 
 # Runtime data
 pids
@@ -48,6 +50,9 @@ typings/
 # Optional eslint cache
 .eslintcache
 
+# Optional stylelint cache
+.stylelintcache
+
 # Optional REPL history
 .node_repl_history
 
@@ -84,4 +89,15 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-      
+# local env files
+.env.local
+.env.*.local
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

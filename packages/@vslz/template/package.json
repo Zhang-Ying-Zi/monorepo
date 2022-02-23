@@ -28,7 +28,6 @@
     "less": "^4.1.1",
     "less-loader": "^8.0.0",
     "postcss-pxtorem": "^5.1.1",
-    "vslz-cli": "^1.0.0",
     "vue-template-compiler": "^2.6.11",
     "webpack": "^4.46.0"
   },
