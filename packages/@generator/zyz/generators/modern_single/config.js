@@ -53,10 +53,6 @@ module.exports = {
       output: ".prettierrc.js",
     },
     {
-      input: "commitlint.config.js",
-      output: "commitlint.config.js",
-    },
-    {
       input: ".stylelintrc.js",
       output: ".stylelintrc.js",
     },
@@ -67,8 +63,10 @@ module.exports = {
       file: "package.json",
       default: {
         scripts: {
+          // prepare:
+          //   "git init && npx husky install && npx husky add .husky/pre-commit 'npx lint-staged' && npx husky add .husky/commit-msg 'npx commitlint --edit ``\u0024````\u0031``'",
           prepare:
-            "git init && npx husky install && npx husky add .husky/pre-commit 'npx lint-staged' && npx husky add .husky/commit-msg 'npx commitlint --edit ``\u0024````\u0031``'",
+            "git init && npx husky install && npx husky add .husky/pre-commit 'npx lint-staged'",
           eslint: "eslint . --cache --fix",
           compileJS: "babel src --out-dir dist",
           compileTS: "babel src --out-dir dist --extensions '.ts'",
@@ -84,12 +82,8 @@ module.exports = {
           "@babel/preset-env": "^7.16.11",
           "@babel/preset-react": "^7.16.7",
           "@babel/preset-typescript": "^7.16.7",
-          "@commitlint/cli": "^16.1.0",
-          "@commitlint/config-conventional": "^16.0.0",
-          "@commitlint/config-lerna-scopes": "^16.0.0",
           "@typescript-eslint/eslint-plugin": "^5.12.0",
           "@typescript-eslint/parser": "^5.12.0",
-          commitlint: "^16.1.0",
           eslint: "^8.7.0",
           "eslint-config-prettier": "^8.3.0",
           "eslint-plugin-prettier": "^4.0.0",

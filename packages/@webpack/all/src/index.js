@@ -5,7 +5,6 @@ import ImgMan from "./assets/images/man.jpg";
 import "./assets/styles/index.css";
 import indexLess from "./assets/styles/indexLess.less";
 import indexScss from "./assets/styles/indexScss.scss";
-import "./ts";
 import "./ReactIndex";
 import "./ReactIndexJS";
 import "./VueIndex";

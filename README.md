@@ -166,6 +166,12 @@ echo "build(project1): change something" | npx commitlint
 
 帮助在提交 commit 信息时自动运行 commitlint 进行检查
 
+npm set-script prepare "husky install"
+npm run prepare
+
+npx husky add .husky/pre-commit "npm test"
+git add .husky/pre-commit
+
 ### tomono
 
 Lerna 为我们提供了 lerna import 命令，用来将我们已有的包导入到 monorepo 仓库，并且还会保留该仓库的所有 commit 信息。然而实际上，该命令仅支持导入本地项目，并且不支持导入项目的分支和标签
