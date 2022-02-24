@@ -76,8 +76,8 @@ module.exports = {
       files: ["**/*.vue"], // 只处理 vue 文件
       extends: [
         // "plugin:vue/vue3-recommended",
-        "plugin:vue/recommended", // Use this if you are using Vue.js 2.x.
-        "plugin:prettier/recommended",
+        // "plugin:vue/recommended", // Use this if you are using Vue.js 2.x.
+        // "plugin:prettier/recommended",
       ],
     },
   ],
