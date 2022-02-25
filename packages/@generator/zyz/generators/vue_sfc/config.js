@@ -14,7 +14,12 @@ module.exports = {
     },
   ],
   filesToCopy: [],
-  filesToRender: [],
+  filesToRender: [
+    {
+      input: "sfc.vue.tpl",
+      output: "sfc.vue",
+    },
+  ],
   filesToMerge: [],
   dirsToCreate: [],
 };

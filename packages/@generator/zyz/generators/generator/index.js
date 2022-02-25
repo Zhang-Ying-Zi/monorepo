@@ -1,8 +1,8 @@
 const Generator = require("yeoman-generator");
 const config = require("./config");
 const mkdirp = require("mkdirp");
-const path = require("path");
-const _ = require("lodash");
+// const path = require("path");
+// const _ = require("lodash");
 
 module.exports = class extends Generator {
   constructor(args, opts) {
@@ -46,7 +46,11 @@ module.exports = class extends Generator {
       this.fs.copy(this.templatePath(input), this.destinationPath(output));
     };
     const copyTpl = (input, output, data) => {
-      this.fs.copyTpl(this.templatePath(input), this.destinationPath(output), data);
+      this.fs.copyTpl(
+        this.templatePath(input),
+        this.destinationPath(output),
+        data
+      );
     };
 
     // Create extra directories

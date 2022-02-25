@@ -1,21 +1,15 @@
 <template>
-  <div></div>
+  <li>
+    {{ title }}
+    <button @click="$emit('remove')">Remove</button>
+  </li>
 </template>
 
 <script>
 export default {
-  name: "<%= sfcName %>",
-  components: {},
-  directives: {},
-  filters: {},
-  mixins: [],
-  inheritAttrs: true,
-  model: {
-    prop: "value",
-    event: "input",
-  },
-  props: [],
-  emits: [],
+  name: "TodoItem",
+  props: ["title"],
+  emits: ["remove"],
   data() {
     return {};
   },
