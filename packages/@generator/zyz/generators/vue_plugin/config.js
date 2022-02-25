@@ -14,7 +14,12 @@ module.exports = {
     },
   ],
   filesToCopy: [],
-  filesToRender: [],
+  filesToRender: [
+    {
+      input: "plugin.js.tpl",
+      output: "plugin.js",
+    },
+  ],
   filesToMerge: [],
   dirsToCreate: [],
 };

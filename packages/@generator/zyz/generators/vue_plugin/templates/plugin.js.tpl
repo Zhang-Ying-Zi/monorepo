@@ -1,4 +1,4 @@
-MyPlugin.install = function (Vue, options) {
+<%= pluginName %>.install = function (Vue, options) {
   // 1. 添加全局方法或 property
   Vue.myGlobalMethod = function () {
     // 逻辑...

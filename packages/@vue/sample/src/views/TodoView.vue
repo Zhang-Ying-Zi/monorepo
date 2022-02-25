@@ -10,12 +10,12 @@
       <button>Add</button>
     </form>
     <ul>
-      <TodoItem
+      <todo-item
         v-for="(todo, index) in todos"
         :key="todo.id"
         :title="todo.title"
         @remove="todos.splice(index, 1)"
-      ></TodoItem>
+      ></todo-item>
     </ul>
   </div>
 </template>
