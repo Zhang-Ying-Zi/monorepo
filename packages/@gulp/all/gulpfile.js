@@ -25,18 +25,16 @@ gulp.task("clean", function () {
 gulp.task(
   "usemin",
   gulp.series("clean", function () {
-    return (
-      gulp
-        .src("src/index.html")
-        // .pipe(plugins.rename("index.html"))
-        .pipe(
-          plugins.usemin({
-            js: [plugins.uglify(), plugins.rev()],
-            css: [plugins.minifyCss(), plugins.rev()],
-          })
-        )
-        .pipe(gulp.dest("dist"))
-    );
+    return gulp
+      .src("src/index.html")
+      .pipe(plugins.rename("index.html"))
+      .pipe(
+        plugins.usemin({
+          js: [plugins.uglify(), plugins.rev()],
+          css: [plugins.minifyCss(), plugins.rev()],
+        })
+      )
+      .pipe(gulp.dest("dist"));
   })
 );
 
