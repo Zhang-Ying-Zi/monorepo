@@ -25,22 +25,24 @@ gulp.task("clean", function () {
 gulp.task(
   "usemin",
   gulp.series("clean", function () {
-    return gulp
-      .src("src/index.html")
-      .pipe(plugins.rename("index.html"))
-      .pipe(
-        plugins.usemin({
-          js: [plugins.uglify(), plugins.rev()],
-          css: [plugins.minifyCss(), plugins.rev()],
-        })
-      )
-      .pipe(gulp.dest("dist"));
+    return (
+      gulp
+        .src("src/index.html")
+        // .pipe(plugins.rename("index.html"))
+        .pipe(
+          plugins.usemin({
+            js: [plugins.uglify(), plugins.rev()],
+            css: [plugins.minifyCss(), plugins.rev()],
+          })
+        )
+        .pipe(gulp.dest("dist"))
+    );
   })
 );
 
 gulp.task("babel", () =>
   gulp
-    .src("src/framework7.v4.1.1.min.js")
+    .src("src/**/*.js")
     .pipe(
       plugins.babel({
         presets: ["@babel/env"],
@@ -49,26 +51,40 @@ gulp.task("babel", () =>
     .pipe(gulp.dest("dist"))
 );
 
-gulp.task("css", () => {
-  const postcss = require("gulp-postcss");
-  const sourcemaps = require("gulp-sourcemaps");
+gulp.task("scss", () => {
+  const sass = require("gulp-sass")(require("sass"));
 
   return gulp
-    .src("src/**/*.css")
-    .pipe(sourcemaps.init())
-    .pipe(
-      postcss([
-        require("autoprefixer")(autoprefixerConfig),
-        require("postcss-nested"),
-      ])
-    )
-    .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest("dist"));
+    .src("src/**/*.scss")
+    .pipe(sass.sync().on("error", sass.logError))
+    .pipe(gulp.dest("src/css"));
 });
+
+gulp.task(
+  "css",
+  gulp.series("scss", function () {
+    const postcss = require("gulp-postcss");
+    const sourcemaps = require("gulp-sourcemaps");
+
+    return gulp
+      .src("src/**/*.css")
+      .pipe(sourcemaps.init())
+      .pipe(
+        postcss([
+          require("autoprefixer")(autoprefixerConfig),
+          require("postcss-nested"),
+        ])
+      )
+      .pipe(sourcemaps.write("."))
+      .pipe(gulp.dest("dist"));
+  })
+);
 
 // gulp.series()
 // gulp.parallel()
 gulp.task(
   "default",
-  gulp.series("clean", function () {})
+  gulp.series(["clean", "babel", "css"], function (done) {
+    done();
+  })
 );

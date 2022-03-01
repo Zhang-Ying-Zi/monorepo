@@ -22,10 +22,12 @@
     "gulp-postcss": "^9.0.1",
     "gulp-rename": "^2.0.0",
     "gulp-rev": "^9.0.0",
+    "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
     "gulp-usemin": "^0.3.30",
-    "postcss-nested": "^5.0.6"
+    "postcss-nested": "^5.0.6",
+    "sass": "^1.49.9"
   },
   "gitHead": "52776c040d84d57eb5895f220108f874cbf22c20"
 }

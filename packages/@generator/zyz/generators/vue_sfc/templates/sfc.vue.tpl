@@ -6,13 +6,10 @@
 export default {
   name: "<%= sfcName %>",
   components: {},
-  directives: {},
-  filters: {},
-  mixins: [],
-  model: {
-    prop: "value",
-    event: "input",
+  provide() {
+    return {};
   },
+  inject: [],
   props: {
     // // 基础的类型检查 (`null` 和 `undefined` 值会通过任何类型验证)
     // // type: String Number Boolean Array Object Date Function Symbol or 自定义构造函数
