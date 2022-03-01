@@ -1,8 +1,8 @@
-// const fs = require("fs");
 const gulp = require("gulp");
-const plugins = require("gulp-load-plugins")();
+const $ = require("gulp-load-plugins")();
+const browser = require("browser-sync");
+// const fs = require("fs");
 // const pkg = JSON.parse(fs.readFileSync("./package.json", "utf8"));
-const postcss = require("gulp-postcss");
 
 const autoprefixerConfig = {
   overrideBrowserslist: [
@@ -19,7 +19,7 @@ const autoprefixerConfig = {
 };
 
 gulp.task("clean", function () {
-  return gulp.src("./dist/*").pipe(plugins.clean());
+  return gulp.src("./dist/*").pipe($.clean());
 });
 
 // 合并 css,js 文件
@@ -28,23 +28,23 @@ gulp.task(
   gulp.series("clean", function () {
     return gulp
       .src("src/index.html")
-      .pipe(plugins.rename("index.html"))
+      .pipe($.rename("index.html"))
       .pipe(
-        plugins.usemin({
+        $.usemin({
           js: [
-            plugins.babel({
+            $.babel({
               presets: ["@babel/env"],
             }),
-            plugins.uglify(),
-            plugins.rev(),
+            $.uglify(),
+            $.rev(),
           ],
           css: [
-            postcss([
+            $.postcss([
               require("autoprefixer")(autoprefixerConfig),
               require("postcss-nested"),
             ]),
-            plugins.minifyCss(),
-            plugins.rev(),
+            $.minifyCss(),
+            $.rev(),
           ],
         })
       )
@@ -56,7 +56,7 @@ gulp.task("babel", () =>
   gulp
     .src("src/**/*.js")
     .pipe(
-      plugins.babel({
+      $.babel({
         presets: ["@babel/env"],
       })
     )
@@ -75,27 +75,38 @@ gulp.task("scss", () => {
 gulp.task(
   "css",
   gulp.series("scss", function () {
-    const sourcemaps = require("gulp-sourcemaps");
-
     return gulp
       .src("src/**/*.css")
-      .pipe(sourcemaps.init())
+      .pipe($.sourcemaps.init())
       .pipe(
-        postcss([
+        $.postcss([
           require("autoprefixer")(autoprefixerConfig),
           require("postcss-nested"),
         ])
       )
-      .pipe(sourcemaps.write("."))
+      .pipe($.sourcemaps.write("."))
       .pipe(gulp.dest("dist"));
   })
 );
+
+// Starts a test server, which you can view at http://localhost:3000
+gulp.task("server", function () {
+  browser.init({
+    open: true,
+    notify: true,
+    reloadOnRestart: true,
+    injectChanges: true,
+    server: {
+      baseDir: "./dist",
+    },
+  });
+});
 
 // gulp.series()
 // gulp.parallel()
 gulp.task(
   "default",
-  gulp.series(["clean", "scss", "usemin"], function (done) {
+  gulp.series(["clean", "scss", "usemin", "server"], function (done) {
     done();
   })
 );
