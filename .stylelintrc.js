@@ -4,6 +4,8 @@ module.exports = {
   rules: {
     "prettier/prettier": true,
     "no-descending-specificity": null,
+    "declaration-block-no-redundant-longhand-properties": null,
+    "number-max-precision": null,
   },
   ignoreFiles: ["**/node_modules/**"],
   overrides: [

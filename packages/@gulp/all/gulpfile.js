@@ -2,6 +2,7 @@
 const gulp = require("gulp");
 const plugins = require("gulp-load-plugins")();
 // const pkg = JSON.parse(fs.readFileSync("./package.json", "utf8"));
+const postcss = require("gulp-postcss");
 
 const autoprefixerConfig = {
   overrideBrowserslist: [
@@ -30,8 +31,21 @@ gulp.task(
       .pipe(plugins.rename("index.html"))
       .pipe(
         plugins.usemin({
-          js: [plugins.uglify(), plugins.rev()],
-          css: [plugins.minifyCss(), plugins.rev()],
+          js: [
+            plugins.babel({
+              presets: ["@babel/env"],
+            }),
+            plugins.uglify(),
+            plugins.rev(),
+          ],
+          css: [
+            postcss([
+              require("autoprefixer")(autoprefixerConfig),
+              require("postcss-nested"),
+            ]),
+            plugins.minifyCss(),
+            plugins.rev(),
+          ],
         })
       )
       .pipe(gulp.dest("dist"));
@@ -55,13 +69,12 @@ gulp.task("scss", () => {
   return gulp
     .src("src/**/*.scss")
     .pipe(sass.sync().on("error", sass.logError))
-    .pipe(gulp.dest("src/css"));
+    .pipe(gulp.dest("src"));
 });
 
 gulp.task(
   "css",
   gulp.series("scss", function () {
-    const postcss = require("gulp-postcss");
     const sourcemaps = require("gulp-sourcemaps");
 
     return gulp
@@ -82,7 +95,7 @@ gulp.task(
 // gulp.parallel()
 gulp.task(
   "default",
-  gulp.series(["clean", "babel", "css"], function (done) {
+  gulp.series(["clean", "scss", "usemin"], function (done) {
     done();
   })
 );
