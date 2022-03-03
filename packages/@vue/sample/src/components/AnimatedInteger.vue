@@ -8,29 +8,6 @@ import loadjs from "../utils/loadjs.js";
 export default {
   name: "AnimatedInteger",
   components: {},
-  provide() {
-    return {};
-  },
-  inject: [],
-  props: {
-    value: {
-      type: Number,
-      required: true,
-    },
-  },
-  emits: {
-    // // 没有验证
-    // click: null,
-    // // 验证 submit 事件
-    // submit: ({ email, password }) => {
-    //   if (email && password) {
-    //     return true;
-    //   } else {
-    //     console.warn("Invalid submit event payload!");
-    //     return false;
-    //   }
-    // },
-  },
   data() {
     return {
       tweeningValue: 0,
