@@ -8,5 +8,4 @@ lib/
 .prettierrc.js
 .stylelintrc.js
 jest.config.js
-tweenmax/demo/
-tweenmax/js/
+greensock-js-2.1.2/
