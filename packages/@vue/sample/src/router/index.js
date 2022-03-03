@@ -22,6 +22,12 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "vender" */ "../views/TodoView.vue"),
   },
+  {
+    path: "/compute",
+    name: "compute",
+    component: () =>
+      import(/* webpackChunkName: "vender" */ "../views/ComputeView.vue"),
+  },
 ];
 
 const router = createRouter({
