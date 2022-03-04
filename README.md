@@ -198,3 +198,11 @@ $ pm2 stop app_name
 $ pm2 delete app_name
 $ pm2 plus
 ```
+
+### stylelint
+
+```
+/* stylelint-disable */
+a {}
+/* stylelint-enable */
+```

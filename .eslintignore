@@ -9,3 +9,4 @@ lib/
 .stylelintrc.js
 jest.config.js
 greensock-js-2.1.2/
+gsap-docs-offline/
