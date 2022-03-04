@@ -63,11 +63,32 @@ export default {
     //   }
     // },
   },
+  setup(props, context) {
+    // setup中避免使用this, 会找不到组件实例
+    // 这里返回的任何内容都可以用于组件的其余部分
+    return {};
+  },
   data() {
     return {};
   },
-  computed: {},
-  watch: {},
+  computed: {
+    // publishedBooksMessage() {
+    //   return this.author.books.length > 0 ? 'Yes' : 'No'
+    // },
+    // fullName: {
+    //   get() {
+    //     return this.firstName + ' ' + this.lastName
+    //   },
+    //   set(newValue) {
+    //     const names = newValue.split(' ')
+    //     this.firstName = names[0]
+    //     this.lastName = names[names.length - 1]
+    //   }
+    // }
+  },
+  watch: {
+    // datapropertysample(newValue, oldValue) {},
+  },
   methods: {},
   beforeCreate() {},
   created() {},
