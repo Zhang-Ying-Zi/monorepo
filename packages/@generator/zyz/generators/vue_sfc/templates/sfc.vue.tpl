@@ -6,6 +6,14 @@
 export default {
   name: "<%= sfcName %>",
   components: {},
+  mixins: [],
+  directives: {
+    // focus: {
+    //   mounted(el) {
+    //     el.focus()
+    //   }
+    // }
+  },
   provide() {
     // 要访问组件实例 property，我们需要将 provide 转换为返回对象的函数
     return {};
