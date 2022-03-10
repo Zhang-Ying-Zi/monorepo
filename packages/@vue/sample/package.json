@@ -1,14 +1,16 @@
 {
   "name": "@vue/sample",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint",
-    "ssr": "node ./src/ssr.js"
+    "build:client": "vue-cli-service build --dest dist/client",
+    "build:server": "SSR=1 vue-cli-service build --dest dist/server",
+    "build": "npm run build:client && npm run build:server",
+    "ssr": "npm run build && node ./ssr.js"
   },
   "dependencies": {
     "@vue/server-renderer": "^3.2.31",
@@ -41,6 +43,8 @@
     "jest": "^27.0.5",
     "less": "^4.0.0",
     "less-loader": "^8.0.0",
-    "prettier": "^2.4.1"
+    "prettier": "^2.4.1",
+    "webpack-manifest-plugin": "^4.1.1",
+    "webpack-node-externals": "^3.0.0"
   }
 }

@@ -1,0 +1,13 @@
+{
+  "name": "@vue/nuxt3sample",
+  "version": "0.1.0",
+  "private": false,
+  "scripts": {
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "start": "node .output/server/index.mjs"
+  },
+  "devDependencies": {
+    "nuxt3": "latest"
+  }
+}
