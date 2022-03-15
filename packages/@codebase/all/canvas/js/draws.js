@@ -2,10 +2,16 @@
 (function (root, factory) {
   if (typeof define === "function" && define.amd) {
     define([], function () {
-      return (root.drawGlobal = factory());
+      return (root.draws = factory());
     });
+  } else if (typeof module === "object" && module.exports) {
+    // Node. Does not work with strict CommonJS, but
+    // only CommonJS-like environments that support module.exports,
+    // like Node.
+    module.exports = factory();
   } else {
-    root.drawGlobal = factory();
+    // Browser globals
+    root.draws = factory();
   }
 })(typeof self !== "undefined" ? self : this, function () {
   // 绘制圆角矩形
