@@ -222,4 +222,4 @@ window.utils.intersects = function (rectA, rectB) {
   );
 };
 
-export default window.utils;
+// export default window.utils;
