@@ -14,8 +14,9 @@
     root.draws = factory();
   }
 })(typeof self !== "undefined" ? self : this, function () {
-  // 绘制圆角矩形
-  function roundedRect(ctx, x, y, width, height, radius) {
+  var draws = {};
+  // 圆角矩形
+  draws.roundedRect = function (ctx, x, y, width, height, radius) {
     ctx.beginPath();
     ctx.moveTo(x, y + radius);
     ctx.lineTo(x, y + height - radius);
@@ -27,9 +28,9 @@
     ctx.lineTo(x + radius, y);
     ctx.quadraticCurveTo(x, y, x, y + radius);
     ctx.stroke();
-  }
+  };
 
-  function drawSpirograph(ctx, R, r, O) {
+  draws.drawSpirograph = function (ctx, R, r, O) {
     var x1 = R - O;
     var y1 = 0;
     var i = 1;
@@ -49,9 +50,9 @@
       i++;
     } while (x2 != R - O && y2 != 0);
     ctx.stroke();
-  }
+  };
 
-  function drawStar(ctx, r) {
+  draws.drawStar = function (ctx, r) {
     ctx.save();
     ctx.beginPath();
     ctx.moveTo(r, 0);
@@ -66,11 +67,39 @@
     ctx.closePath();
     ctx.fill();
     ctx.restore();
-  }
-
-  return {
-    roundedRect,
-    drawSpirograph,
-    drawStar,
   };
+
+  // 行军蚁
+  draws.dynamicStrokeLine = function (ctx, startX, startY, width, height) {
+    var offset = 0;
+    function drawRect() {
+      ctx.clearRect(startX, startY, width, height);
+      ctx.setLineDash([4, 2]);
+      ctx.lineDashOffset = -offset;
+      ctx.strokeRect(startX, startY, width, height);
+    }
+    function march() {
+      offset++;
+      if (offset > 16) {
+        offset = 0;
+      }
+      drawRect();
+      setTimeout(march, 40);
+    }
+    march();
+  };
+
+  draws.smileFace = function (ctx) {
+    ctx.beginPath();
+    ctx.arc(75, 75, 50, 0, Math.PI * 2, true); // 绘制
+    ctx.moveTo(110, 75);
+    ctx.arc(75, 75, 35, 0, Math.PI, false); // 顺时针
+    ctx.moveTo(65, 65);
+    ctx.arc(60, 65, 5, 0, Math.PI * 2, true); // 左眼
+    ctx.moveTo(95, 65);
+    ctx.arc(90, 65, 5, 0, Math.PI * 2, true); // 右眼
+    ctx.stroke();
+  };
+
+  return draws;
 });

@@ -6,7 +6,7 @@
  * @param {HTMLElement} element   Optional parameter specifying the element that visually bounds the entire animation.
  * @return {number} Animation frame request.
  */
-if (!window.requestAnimationFrame) {
+if (window && !window.requestAnimationFrame) {
   window.requestAnimationFrame =
     window.webkitRequestAnimationFrame ||
     window.mozRequestAnimationFrame ||
@@ -24,7 +24,7 @@ if (!window.requestAnimationFrame) {
  * Checks for cross-browser support, falls back to clearTimeout.
  * @param {number}  Animation frame request.
  */
-if (!window.cancelAnimationFrame) {
+if (window && !window.cancelAnimationFrame) {
   window.cancelAnimationFrame =
     window.cancelRequestAnimationFrame ||
     window.webkitCancelAnimationFrame ||
