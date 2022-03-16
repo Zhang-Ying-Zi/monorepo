@@ -12,7 +12,12 @@
         <meta name="description" content="" />
         <title><%= templateName %></title>
         <style type="text/css">
-            canvas { border: 1px solid #000000; }
+            body {
+                background-color:#bbb;
+            }
+            #canvas{
+                background-color:#fff;
+            }
         </style>
     </head>
     <body>
@@ -24,6 +29,9 @@
             window.onload=function(){
                 var canvas=document.getElementById("canvas");
                 var ctx=canvas.getContext("2d");
+                var mouse = utils.captureMouse(canvas);
+                var touch = utils.captureTouch(canvas);
+                
                 (function drawFrame(){
                     window.requestAnimationFrame(drawFrame);
                     ctx.clearRect(0,0,canvas.width,canvas.height);

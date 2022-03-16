@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="format-detection" content="telephone=no" /> 
+        <meta name="format-detection" content="email=no" />
+        <meta name="keywords" content="" /> 
+        <meta name="description" content="" />
+        <title></title>
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <canvas id="canvas" width="400" height="400">Your browser do not support canvas</canvas>
+        <script src="./js/utils.js"></script>
+        <script src="./js/segment.js"></script>
+        <script src="./js/slider.js"></script>
+        <script>
+            window.onload = function () {
+
+                var canvas = document.getElementById('canvas');
+                var context = canvas.getContext('2d');
+                var mouse = utils.captureMouse(canvas);
+                var touch = utils.captureTouch(canvas);
+
+                var segment0 = new Segment(100, 20),
+                    segment1 = new Segment(100, 20);
+                    slider0 = new Slider(-90, 90, 0),
+                    slider1 = new Slider(-160, 0, 0);
+
+                segment0.x = 100;
+                segment0.y = 100;
+
+                slider0.x = 320;
+                slider0.y = 20;
+                slider0.captureMouse(canvas);
+                slider0.onchange = drawFrame;
+
+                slider1.x = 340;
+                slider1.y = 20;
+                slider1.captureMouse(canvas);
+                slider1.onchange = drawFrame;
+
+                function drawFrame() {
+                    context.clearRect(0, 0, canvas.width, canvas.height);
+
+                    segment0.rotation = slider0.value * Math.PI / 180;
+                    //segment1.rotation = slider1.value * Math.PI / 180;
+                    segment1.rotation = segment0.rotation + slider1.value * Math.PI / 180;
+                    segment1.x = segment0.getPin().x;
+                    segment1.y = segment0.getPin().y;
+
+                    segment0.draw(context);
+                    segment1.draw(context);
+                    slider0.draw(context);
+                    slider1.draw(context);
+                }
+
+                drawFrame();
+                
+                // (function drawFrame() {
+                //     window.requestAnimationFrame(drawFrame, canvas);
+                //     context.clearRect(0, 0, canvas.width, canvas.height);
+                // }());
+
+            };
+        </script>
+    </body>
+</html>

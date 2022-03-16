@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="format-detection" content="telephone=no" /> 
+        <meta name="format-detection" content="email=no" />
+        <meta name="keywords" content="" /> 
+        <meta name="description" content="" />
+        <title></title>
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <canvas id="canvas" width="400" height="400">Your browser do not support canvas</canvas>
+        <script src="./js/utils.js"></script>
+        <script>
+            window.onload = function () {
+
+                var canvas = document.getElementById('canvas');
+                var context = canvas.getContext('2d');
+                var mouse = utils.captureMouse(canvas);
+                var touch = utils.captureTouch(canvas);
+                
+                var x0 = 100,
+                    y0 = 200,
+                    x2 = 300,
+                    y2 = 200;
+
+                canvas.addEventListener('mousemove', function(){
+                    context.clearRect(0, 0, canvas.width, canvas.height);
+
+                    var x1 = mouse.x*2 - (x0 + x2)/2,
+                        y1 = mouse.y*2 - (y0 + y2)/2;
+                    
+                    context.beginPath();
+                    context.moveTo(x0, y0);
+                    context.quadraticCurveTo(x1, y1, x2, y2);
+                    context.stroke();
+                }, false);
+
+                (function drawFrame() {
+                    window.requestAnimationFrame(drawFrame, canvas);
+                    //context.clearRect(0, 0, canvas.width, canvas.height);
+
+                    
+                }());
+
+            };
+        </script>
+    </body>
+</html>
