@@ -15,7 +15,7 @@ export default {
     // }
   },
   provide() {
-    // 要访问组件实例 property，我们需要将 provide 转换为返回对象的函数
+    // 要访问组件实例 property（this），我们需要将 provide 转换为返回对象的函数
     return {};
   },
   inject: [],
@@ -73,8 +73,13 @@ export default {
     // },
   },
   setup(props, context) {
-    // setup中避免使用this, 会找不到组件实例
+    // 在 `setup` 中你应该避免使用 `this`，因为它不会找到组件实例。`setup` 的调用发生在 `data` property、`computed` property 或 `methods` 被解析之前，所以它们无法在 `setup` 中被获取。
     // 这里返回的任何内容都可以用于组件的其余部分
+    // 因为 props 是响应式的，不能使用 ES6 解构，它会消除 prop 的响应性。
+    // 如果需要解构 prop，可以在 setup 函数中使用 toRefs 函数来完成此操作
+    // context是非响应式的 = { attrs, slots, emit, expose }
+    // onMounted(() => {}); 
+    // watch(property, () => {});
     return {};
   },
   data() {

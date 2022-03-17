@@ -6,6 +6,7 @@ import { createWebHistory } from "vue-router";
 import createRouter from "./router/index.js";
 import store from "./store";
 import i18nPlugin from "./plugins/i18n";
+import addDirectives from "./directives/index.js";
 
 const vm = createApp(App);
 vm.use(store);
@@ -19,5 +20,7 @@ const i18nStrings = {
 };
 vm.use(i18nPlugin, i18nStrings);
 console.log(vm.config.globalProperties.$translate("greetings.hi"));
+
+addDirectives(vm);
 
 vm.mount("#app");

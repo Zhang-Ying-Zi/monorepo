@@ -27,8 +27,8 @@
         <script type="text/javascript" src="./js/utils.js"></script>
         <script type="text/javascript">
             window.onload=function(){
-                var canvas=document.getElementById("canvas");
-                var ctx=canvas.getContext("2d");
+                var canvas = document.getElementById("canvas");
+                var ctx = canvas.getContext("2d");
                 var mouse = utils.captureMouse(canvas);
                 var touch = utils.captureTouch(canvas);
                 

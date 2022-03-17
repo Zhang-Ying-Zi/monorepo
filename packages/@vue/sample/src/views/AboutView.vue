@@ -1,5 +1,19 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div id="dynamicexample">
+    <h2>Scroll down the page</h2>
+    <input type="range" min="0" max="500" v-model="pinPadding" />
+    <p v-pin:[direction]="pinPadding">
+      Stick me {{ pinPadding + "px" }} from the {{ direction || "top" }} of the
+      page
+    </p>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return { direction: "right", pinPadding: 200 };
+  },
+  setup() {},
+};
+</script>
