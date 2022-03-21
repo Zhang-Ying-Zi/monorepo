@@ -5,7 +5,7 @@ const mkdirp = require("mkdirp");
 // const path = require("path");
 // const _ = require("lodash");
 
-// svg html
+// html svg canvas
 let templateData = { fileType: "svg", fileName: "base" };
 
 module.exports = class extends Generator {
@@ -83,10 +83,16 @@ module.exports = class extends Generator {
     // config.filesToRender.forEach((file) => {
     //   if (!file.if || templateData[file.if]) {
     // copyTpl(file.input, file.output, templateData);
-    if (templateData.fileType.toLowerCase() === "svg") {
-      copyTpl("svg.tpl", templateData.fileName + ".svg", templateData);
-    } else if (templateData.fileType.toLowerCase() === "html") {
-      copyTpl("html.tpl", templateData.fileName + ".html", templateData);
+    switch (templateData.fileType.toLowerCase()) {
+      case "svg":
+        copyTpl("svg.tpl", templateData.fileName + ".svg", templateData);
+        break;
+      case "canvas":
+        copyTpl("canvas.tpl", templateData.fileName + ".html", templateData);
+        break;
+      default:
+        copyTpl("html.tpl", templateData.fileName + ".html", templateData);
+        break;
     }
     //   }
     // });

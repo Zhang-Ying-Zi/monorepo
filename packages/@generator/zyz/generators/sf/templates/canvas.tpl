@@ -10,7 +10,7 @@
         <meta name="format-detection" content="email=no" />
         <meta name="keywords" content="" />
         <meta name="description" content="" />
-        <title><%= templateName %></title>
+        <title><%= fileName %></title>
         <style type="text/css">
             body {
                 background-color:#bbb;
