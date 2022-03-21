@@ -9,7 +9,7 @@ module.exports = {
   prompts: [
     {
       type: "input",
-      name: "sfcName",
+      name: "fileName",
       message: "file name :",
     },
   ],
