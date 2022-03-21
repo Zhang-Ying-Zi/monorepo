@@ -1,0 +1,21 @@
+<svg 
+  version="1.1"
+  baseProfile="full"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:ev="http://www.w3.org/2001/xml-events"
+  id="base"
+  width="300px"
+  height="150px"
+  viewBox="0 0 300 150"
+  preserveAspectRatio="xMidYMid meet"
+>
+<defs> 
+	<rect id="shape" x="0" y="0" width="150" height="150" fill="rgba(0,0,0,0.4)"/>
+	<clipPath id="textClip"> 
+		<text id="text1" x="0" y="0" transform="rotate(60)" style="font-size: 28pt; stroke: black; fill: none;">CLIP</text> 
+	</clipPath> 
+</defs> 
+<use transform="translate(0, 0)" href="#shape" style="clip-path: url(#textClip);"/> 
+<use transform="translate(150, 0)" href="#shape" clip-path="url(#textClip);"/>
+</svg>

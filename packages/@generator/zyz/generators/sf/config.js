@@ -9,16 +9,21 @@ module.exports = {
   prompts: [
     {
       type: "input",
+      name: "fileType",
+      message: "file type :",
+    },
+    {
+      type: "input",
       name: "fileName",
       message: "file name :",
     },
   ],
   filesToCopy: [],
   filesToRender: [
-    {
-      input: "svg.tpl",
-      output: "svg.svg",
-    },
+    // {
+    //   input: "svg.tpl",
+    //   output: "svg.svg",
+    // },
   ],
   filesToMerge: [],
   dirsToCreate: [],

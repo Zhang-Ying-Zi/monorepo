@@ -5,7 +5,8 @@ const mkdirp = require("mkdirp");
 // const path = require("path");
 // const _ = require("lodash");
 
-let templateData = { fileName: "svg" };
+// svg html
+let templateData = { fileType: "svg", fileName: "base" };
 
 module.exports = class extends Generator {
   constructor(args, opts) {
@@ -79,12 +80,16 @@ module.exports = class extends Generator {
     });
 
     // Render Files
-    config.filesToRender.forEach((file) => {
-      if (!file.if || templateData[file.if]) {
-        // copyTpl(file.input, file.output, templateData);
-        copyTpl(file.input, templateData.fileName + ".svg", templateData);
-      }
-    });
+    // config.filesToRender.forEach((file) => {
+    //   if (!file.if || templateData[file.if]) {
+    // copyTpl(file.input, file.output, templateData);
+    if (templateData.fileType.toLowerCase() === "svg") {
+      copyTpl("svg.tpl", templateData.fileName + ".svg", templateData);
+    } else if (templateData.fileType.toLowerCase() === "html") {
+      copyTpl("html.tpl", templateData.fileName + ".html", templateData);
+    }
+    //   }
+    // });
 
     // Copy Files
     config.filesToCopy.forEach((file) => {
