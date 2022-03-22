@@ -8,7 +8,7 @@ module.exports = {
   },
   prompts: [
     {
-      type: "checkbox",
+      type: "list",
       name: "fileType",
       message: "file type :",
       choices: [
