@@ -8,9 +8,26 @@ module.exports = {
   },
   prompts: [
     {
-      type: "input",
+      type: "checkbox",
       name: "fileType",
       message: "file type :",
+      choices: [
+        {
+          name: "html",
+          value: "html",
+          checked: true,
+        },
+        {
+          name: "svg",
+          value: "svg",
+          checked: false,
+        },
+        {
+          name: "canvas",
+          value: "canvas",
+          checked: false,
+        },
+      ],
     },
     {
       type: "input",
