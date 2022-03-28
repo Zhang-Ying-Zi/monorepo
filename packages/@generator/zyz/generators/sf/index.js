@@ -5,7 +5,6 @@ const mkdirp = require("mkdirp");
 // const path = require("path");
 // const _ = require("lodash");
 
-// html svg canvas
 let templateData = { fileType: "svg", fileName: "base" };
 
 module.exports = class extends Generator {
@@ -89,6 +88,17 @@ module.exports = class extends Generator {
         break;
       case "canvas":
         copyTpl("canvas.tpl", templateData.fileName + ".html", templateData);
+        break;
+      case "webcomponent":
+        templateData.className = templateData.fileName
+          .split("-")
+          .map((word) => word[0].toUpperCase() + word.slice(1))
+          .join("");
+        copyTpl(
+          "webcomponent.tpl",
+          templateData.fileName + ".js",
+          templateData
+        );
         break;
       default:
         copyTpl("html.tpl", templateData.fileName + ".html", templateData);

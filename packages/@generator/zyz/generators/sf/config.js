@@ -27,6 +27,11 @@ module.exports = {
           value: "canvas",
           checked: false,
         },
+        {
+          name: "webcomponent",
+          value: "webcomponent",
+          checked: false,
+        },
       ],
     },
     {
