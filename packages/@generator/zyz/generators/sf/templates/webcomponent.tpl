@@ -1,3 +1,6 @@
+import html from './template.html';
+import css from './styles.css';
+
 class <%= className %> extends HTMLElement {
   constructor() {
     // Always call super first in constructor
@@ -6,6 +9,19 @@ class <%= className %> extends HTMLElement {
     // Create a shadow root
     const shadow = this.attachShadow({mode: 'open'});
 
+    // template and slot
+    const template = document.createElement('template');
+    // content: "\f00d" /* Will render as "00d" without escaping */
+    template.innerHTML = `
+      <style>
+        ${css.replace(/\\/g, '\\\\')}
+      </style>
+      ${html}
+      <p><slot name="my-text">My default text</slot></p>
+    `;
+    shadow.appendChild(template.content.cloneNode(true));
+
+    // append child
     const wrapper = document.createElement('span');
     wrapper.setAttribute('class', 'wrapper');
     const info = document.createElement('span');
@@ -25,7 +41,7 @@ class <%= className %> extends HTMLElement {
     `;
     shadow.appendChild(style);
     
-    // 请注意， 因为<link> 元素不会打断 shadow root 的绘制, 因此在加载样式表时可能会出现未添加样式内容（FOUC），导致闪烁。
+    // 因为<link> 元素不会打断 shadow root 的绘制, 因此在加载样式表时可能会出现未添加样式内容（FOUC），导致闪烁。
     const linkElem = document.createElement('link');
     linkElem.setAttribute('rel', 'stylesheet');
     linkElem.setAttribute('href', 'style.css');
