@@ -58,6 +58,7 @@ module.exports = {
       parser: "@typescript-eslint/parser", // 能看懂 TypeScript
       parserOptions: {
         tsconfigRootDir: __dirname,
+        createDefaultProgram: true,
         project: ["./tsconfig.json"], // 告诉 eslint：tsconfig 在哪
       },
       extends: [
