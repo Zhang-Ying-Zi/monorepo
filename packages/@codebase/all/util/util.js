@@ -40,6 +40,15 @@ export function isStr(str) {
 
 export const randomString = () => Math.random().toString(36).slice(2);
 
+// Generate a random id using the Node crypto module
+// export const uuid = () =>
+//   ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
+//     (
+//       c ^
+//       (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
+//     ).toString(16)
+//   );
+
 // Get the actual type of javascript primitives
 export const trueTypeOf = (obj) => {
   return Object.prototype.toString.call(obj).slice(8, -1).toLowerCase();
@@ -127,13 +136,13 @@ export const toObjectAnother = (arr, key) =>
   */
 
 // Count by the properties of an array of objects
-export const countBy = (arr, prop) =>
+export const countElementsByProp = (arr, prop) =>
   arr.reduce(
     (prev, curr) => ((prev[curr[prop]] = ++prev[curr[prop]] || 1), prev),
     {}
   );
 // Example
-// countBy(
+// countElementsByProp(
 //   [
 //     { branch: "audi", model: "q8", year: "2019" },
 //     { branch: "audi", model: "rs7", year: "2020" },
@@ -176,6 +185,8 @@ export function constantize(obj) {
     }
   });
 }
+
+export const isEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
 // Check if multiple objects are equal
 export const isEqualObject = (...objects) =>
@@ -375,6 +386,8 @@ export const isDarkMode =
 // Copy to clipboard
 export const copyToClipboard = (text) => navigator.clipboard.writeText(text);
 
+export const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 /****************************** URL ******************************/
 
 // Check if a path is relative
@@ -439,3 +452,6 @@ export const scrollToTop = () => window.scrollTo(0, 0);
 
 // Check if the current tab is in view/focus
 export const isTabInView = () => !document.hidden;
+
+export const navigateBack = () => history.back();
+export const navigateBack2 = () => history.go(-1);

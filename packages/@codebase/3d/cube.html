@@ -54,6 +54,10 @@
         color: white;
         text-align: center;
       }
+  
+      .cube.is-backface-hidden .cube__face {
+        backface-visibility: hidden;
+      }
 
       .cube__face--front  { background: hsla(  0, 100%, 50%, 0.7); }
       .cube__face--right  { background: hsla( 60, 100%, 50%, 0.7); }
@@ -69,9 +73,6 @@
       .cube__face--top    { transform: rotateX( 90deg) translateZ(100px); }
       .cube__face--bottom { transform: rotateX(-90deg) translateZ(100px); }
 
-      .cube.is-backface-hidden .cube__face {
-        backface-visibility: hidden;
-      }
     </style>
   </head>
 

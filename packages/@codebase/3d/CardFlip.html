@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover, shrink-to-fit=no"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="description" content="" />
+    <!-- <link rel="icon" href="favicon.ico" /> -->
+    <title>CardFlip</title>
+    <style>
+      .scene {
+        width: 200px;
+        height: 260px;
+        perspective: 600px;
+      }
+      .card {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transition: transform 1s;
+        transform-style: preserve-3d;
+        transform-origin: center right;
+      }
+      /* .card.is-flipped {
+        transform: rotateY(180deg);
+      } */
+      .card.is-flipped {
+        transform: translateX(-100%) rotateY(-180deg);
+      }
+      .card__face {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        backface-visibility: hidden;
+      }
+      .card__face--front {
+        background: red;
+      }
+      .card__face--back {
+        background: blue;
+        transform: rotateY( 180deg );
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>Click card to flip.</p>
+    <div class="scene">
+      <div class="card">
+        <div class="card__face card__face--front">front</div>
+        <div class="card__face card__face--back">back</div>
+      </div>
+    </div>
+
+    <script>
+      var card = document.querySelector('.card');
+      card.addEventListener( 'click', function() {
+        card.classList.toggle('is-flipped');
+      });
+    </script>
+  </body>
+</html>
