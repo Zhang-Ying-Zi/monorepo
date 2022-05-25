@@ -78,6 +78,16 @@ export const truncateStringMiddle = (string, start, end) => {
   return `${string.slice(0, start)}...${string.slice(string.length - end)}`;
 };
 
+export function is32Bit(c) {
+  return c.codePointAt(0) > 0xffff;
+}
+
+// 正确返回字符串长度的函数, 支持UTF-16
+export function codePointLength(text) {
+  var result = text.match(/[\s\S]/gu);
+  return result ? result.length : 0;
+}
+
 /****************************** Array ******************************/
 
 // Check if an object is an array
@@ -155,6 +165,13 @@ export const countElementsByProp = (arr, prop) =>
 // { 'audi': 2, 'ford': 2, 'bmw': 1 }
 
 export const shuffleArray = (arr) => arr.sort(() => 0.5 - Math.random());
+
+export const toArray = (() =>
+  Array.from ? Array.from : (obj) => [].slice.call(obj))();
+
+export function ArrayOf() {
+  return [].slice.call(arguments);
+}
 
 /****************************** Object ******************************/
 
